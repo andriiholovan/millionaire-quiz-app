@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 320px;
+  padding: 16px 0 16px;
+  background: var(--grey-light);
+}
+
+.heading {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 16px;
+}
+
+.options_group {
+  display: flex;
+  flex-direction: column;
+}
+

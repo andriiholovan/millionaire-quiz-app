@@ -1,8 +1,16 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
+  min-width: 320px;
+  padding: 16px;
+  background: linear-gradient(to right bottom, var(--white) 50%, var(--orange-light) 50%);
+}
+
+.logo {
+  margin: 64px 0 24px;
+  height: 192px;
+  width: 288px;
 }
