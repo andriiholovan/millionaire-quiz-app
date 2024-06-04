@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Data is loading dynamically from the API https://api.npoint.io/.
 That remote json resource has data validation and could be easily extendable.
-To use your own schema feel free to put data url to QUIZ_DATA_URL env variable.
+Feel free to put data url to QUIZ_DATA_URL env variable to use your own resource.
 
 ```bash
 QUIZ_DATA_URL=https://[your_api_is_resource_here] npm run dev

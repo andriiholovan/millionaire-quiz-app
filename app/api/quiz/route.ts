@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   }
   const currentStep = JSON.parse(step);
   const quizList = await getQuizList();
-  const lastQuiz = quizList.at(-1);
+  const lastQuiz = quizList.at(-1)?.step;
 
   if (lastQuiz === currentStep) {
     return redirect(`/game-over/${currentStep}`);
