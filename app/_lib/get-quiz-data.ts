@@ -1,7 +1,7 @@
 import { revalidatePath } from 'next/cache';
 import { QuizElement, QuizList, QuizListSchema } from '@/app/_lib/schema';
 
-const QUIZ_DATA_URL = 'https://api.npoint.io/b7bd9c92c028169450f0';
+const { QUIZ_DATA_URL = 'https://api.npoint.io/b7bd9c92c028169450f0' } = process.env;
 
 export async function getQuizList(): Promise<QuizList> {
   revalidatePath('/', 'layout');

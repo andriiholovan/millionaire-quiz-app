@@ -15,8 +15,8 @@ vi.mock('next/navigation', async () => {
 
 test('Options buttons', () => {
   const answers = [
-    { title: 'A', option: 'option 1', isCorrect: true },
-    { title: 'B', option: 'option 2', isCorrect: false },
+    { id: 'A', title: 'option 1', isCorrect: true },
+    { id: 'B', title: 'option 2', isCorrect: false },
   ];
   render(<Options answers={answers} />);
   const buttons = screen.getAllByRole('button');
