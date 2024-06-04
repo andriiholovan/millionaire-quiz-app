@@ -6,5 +6,10 @@
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    // it's really annoying, when it warns you to add (WTF?) [Component].defaultProps
+    // in fully typed component with provided default parameters for it
+    "react/require-default-props": 0
   }
 }
