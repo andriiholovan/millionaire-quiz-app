@@ -9,41 +9,28 @@
   background: linear-gradient(to right bottom, var(--white) 50%, var(--orange-light) 50%);
 }
 
-.title_group {
-  margin: auto;
+.logo_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .logo {
-  margin-bottom: 24px;
   height: 192px;
   width: 288px;
+}
+
+.content_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .heading {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
-  margin: 0;
-}
-
-.link {
-  color: var(--white);
-  background: var(--orange-bright);
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  height: 48px;
-  width: 288px;
-  border-radius: 8px;
-  padding: 16px 24px;
-  margin-bottom: 32px;
-}
-
-.link:active, .link:hover {
-  cursor: pointer;
-  background: var(--orange-dark);
 }
