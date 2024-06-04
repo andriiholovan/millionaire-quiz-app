@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { NextRequest } from 'next/server';
 import checkQuizAnswer from '@/app/_lib/check-quiz-answer';
+import { getQuizList } from '@/app/_lib/get-quiz-data';
 
 // todo: nextjs restrictions error
 //  could be fixed by adding new HTTP method handlers
@@ -13,11 +14,18 @@ export async function GET(request: NextRequest) {
   if (!step || !answer) {
     return redirect('/');
   }
+  const currentStep = JSON.parse(step);
+  const quizList = await getQuizList();
+  const lastQuiz = quizList.at(-1);
+
+  if (lastQuiz === currentStep) {
+    return redirect(`/game-over/${currentStep}`);
+  }
 
   const isCorrect = await checkQuizAnswer(step, answer);
-  const currentStep = JSON.parse(step);
   if (!isCorrect) {
     return redirect(`/game-over/${currentStep}`);
   }
+
   redirect(`/quiz/${currentStep + 1}`);
 }

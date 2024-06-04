@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Millionaire game quiz.
+
+IMPORTANT: Basically, project is still WIP. It has few bugs with edge cases and im working on it.
 
 ## Getting Started
 
@@ -16,21 +18,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Data is loading dynamically from the API https://api.npoint.io/.
+That remote json resource has data validation and could be easily extendable.
+To use your own schema feel free to put data url to QUIZ_DATA_URL env variable.
 
-## Learn More
+```bash
+QUIZ_DATA_URL=https://[your_api_is_resource_here] npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+BTW, you can find my schema example here https://www.npoint.io/docs/b7bd9c92c028169450f0 .
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Subscribe to the repository to get any updates. Use the repository Issues/PRs to reach me for any feature requests.   
