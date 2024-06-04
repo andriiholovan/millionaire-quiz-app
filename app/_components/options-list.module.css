@@ -1,0 +1,59 @@
+.options_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer {
+    font-size: 14px;
+    text-align: left;
+    height: 56px;
+    width: 320px;
+    margin: 0 auto 8px;
+    border: none;
+    cursor: pointer;
+    background: url("../../public/mobile_option_inactive.svg");
+}
+
+.answer:active {
+    background: url("../../public/mobile_option_selected.svg");
+}
+
+.answer_correct {
+    background: url("../../public/mobile_option_inactive.svg");
+    animation: correct 0.7s infinite;
+}
+
+@keyframes correct {
+    from {
+        background: url("../../public/mobile_option_correct.svg");
+    }
+    to {
+        background: url("../../public/mobile_option_inactive.svg");
+    }
+}
+
+.answer_incorrect {
+    background: url("../../public/mobile_option_incorrect.svg");
+    animation: incorrect 0.7s infinite;
+}
+
+@keyframes incorrect {
+    from {
+        background: url("../../public/mobile_option_incorrect.svg");
+    }
+    to {
+        background: url("../../public/mobile_option_inactive.svg");
+    }
+}
+
+.answer_label {
+    color: var(--orange-bright);
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.answer_title {
+    color: var(--grey-dark);
+    font-weight: 400;
+    margin-left: 8px;
+}

@@ -1,0 +1,13 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  align-self: end;
+  margin: 16px;
+}
+
+@media (min-width: 768px) {
+  .button {
+    display: none;
+  }
+}

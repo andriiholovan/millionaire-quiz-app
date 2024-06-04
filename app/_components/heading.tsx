@@ -1,13 +1,18 @@
-import styles from '@/app/_components/heading.module.css';
-
 type HeadingProps = {
-  children: React.ReactNode
+  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  children: React.ReactNode;
+  className: string;
 };
 
-export default function Heading({ children }: HeadingProps) {
+export default function Heading({
+  as,
+  children,
+  className,
+}: HeadingProps) {
+  const Tag = as ?? 'h1';
   return (
-    <h1 className={styles.heading}>
+    <Tag className={className}>
       {children}
-    </h1>
+    </Tag>
   );
 }

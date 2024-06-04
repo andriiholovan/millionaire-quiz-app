@@ -9,11 +9,16 @@ export default async function Home() {
   const [firstQuizOption] = await getQuizList();
   return (
     <main className={styles.main}>
-      <HandIcon className={styles.logo} />
-      <Heading>
-        Who wants to be a&nbsp;millionaire?
-      </Heading>
-      <LinkTo href={`/quiz/${firstQuizOption.id}`}>
+      <div className={styles.title_group}>
+        <HandIcon className={styles.logo} />
+        <Heading as="h1" className={styles.heading}>
+          Who wants to be a&nbsp;millionaire?
+        </Heading>
+      </div>
+      <LinkTo
+        className={styles.link}
+        href={`/quiz/${firstQuizOption.step}`}
+      >
         Start
       </LinkTo>
     </main>

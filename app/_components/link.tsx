@@ -1,17 +1,18 @@
 import Link from 'next/link';
-import styles from '@/app/_components/link.module.css';
 
 type LinkToProps = {
   children: React.ReactNode;
+  className: string;
   href: string;
 };
 
 export default function LinkTo({
   children,
+  className,
   href,
 }: LinkToProps) {
   return (
-    <Link href={href} className={styles.link}>
+    <Link href={href} className={className}>
       {children}
     </Link>
   );

@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+
+  & > * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  border: none;
+  background: none;
+  margin: 16px;
+  width: 24px;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .button {
+    display: none;
+  }
+}

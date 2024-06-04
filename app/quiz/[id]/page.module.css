@@ -1,12 +1,26 @@
+.container {
+  display: flex;
+  /*flex: 2 1 auto;*/
+}
+
 .main {
   display: flex;
+  /*flex-grow: 1;*/
+  flex-shrink: 0.4;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
   min-width: 320px;
+  width: 100vw;
   padding: 16px 0 16px;
   background: var(--grey-light);
+}
+
+@media (min-width: 768px) {
+  .main {
+    width: 100%;
+  }
 }
 
 .heading {
@@ -14,10 +28,5 @@
   text-align: center;
   font-weight: 600;
   padding: 0 16px;
+  margin: auto;
 }
-
-.options_group {
-  display: flex;
-  flex-direction: column;
-}
-
