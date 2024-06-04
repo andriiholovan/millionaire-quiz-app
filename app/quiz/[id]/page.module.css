@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   min-width: 320px;
   width: 100vw;
   padding: 16px 0 16px;
