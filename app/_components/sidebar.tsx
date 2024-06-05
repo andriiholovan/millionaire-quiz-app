@@ -33,9 +33,9 @@ export default function Sidebar({
         !isOpen && styles.container_is_closed,
       )}
       >
+        <ButtonCross toggleSidebar={toggleSidebar} />
         <div className={styles.wrapper}>
-          <ButtonCross toggleSidebar={toggleSidebar} />
-          {quizList.toReversed().map((quiz) => (
+          {quizList.map((quiz) => (
             <ProgressItem
               key={quiz.step}
               id={+params.id}

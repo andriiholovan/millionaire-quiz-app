@@ -1,12 +1,10 @@
 .container {
   display: flex;
-  /*flex: 2 1 auto;*/
 }
 
 .main {
   display: flex;
-  /*flex-grow: 1;*/
-  flex-shrink: 0.4;
+  flex-shrink: 0.35;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -17,12 +15,6 @@
   background: var(--grey-light);
 }
 
-@media (min-width: 768px) {
-  .main {
-    width: 100%;
-  }
-}
-
 .heading {
   font-size: 18px;
   text-align: center;
@@ -30,3 +22,31 @@
   padding: 0 16px;
   margin: auto;
 }
+
+@media (min-width: 768px) {
+  .main {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 24px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .main {
+    padding: 92px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .main {
+    padding: 92px 56px;
+  }
+}
+

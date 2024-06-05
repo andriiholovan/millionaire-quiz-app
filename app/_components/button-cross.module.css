@@ -1,9 +1,9 @@
 .button {
+  display: block;
   cursor: pointer;
   border: none;
   background: none;
-  align-self: end;
-  margin: 16px;
+  margin: 16px 16px 16px auto;
 }
 
 @media (min-width: 768px) {

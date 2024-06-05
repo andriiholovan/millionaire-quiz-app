@@ -10,6 +10,7 @@
 }
 
 .logo_container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -28,6 +29,12 @@
   font-size: 32px;
   font-weight: 600;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .logo_container {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1024px) {

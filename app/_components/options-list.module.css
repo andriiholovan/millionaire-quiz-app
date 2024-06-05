@@ -14,7 +14,7 @@
   background: url("../../public/mobile_option_inactive.svg");
 }
 
-.answer:active {
+.answer:active, .answer:hover {
   background: url("../../public/mobile_option_selected.svg");
 }
 
@@ -48,6 +48,7 @@
 
 .answer_label {
   color: var(--orange-bright);
+  font-size: 14px;
   font-weight: 600;
   margin-left: 40px;
 }
@@ -56,4 +57,18 @@
   color: var(--grey-dark);
   font-weight: 400;
   margin-left: 8px;
+}
+
+@media (min-width: 768px) {
+  .options_group {
+    flex-wrap: wrap-reverse;
+  }
+
+  .answer {
+    font-size: 16px;
+  }
+
+  .answer_label {
+    font-size: 16px;
+  }
 }
