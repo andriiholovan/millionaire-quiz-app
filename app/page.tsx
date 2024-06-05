@@ -10,17 +10,13 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.logo_container}>
-        <HandIcon className={styles.logo} />
+        <HandIcon />
       </div>
       <div className={styles.content_container}>
         <Heading as="h1" className={styles.heading}>
           Who wants to be a&nbsp;millionaire?
         </Heading>
-        <Button
-          isPrimary
-          className={styles.link}
-          href={`/quiz/${firstQuizOption.step}`}
-        >
+        <Button push to={`/quiz/${firstQuizOption.step}`}>
           Start
         </Button>
       </div>

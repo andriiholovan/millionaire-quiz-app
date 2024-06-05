@@ -1,32 +1,28 @@
-import classNames from 'classnames';
 import Link from 'next/link';
 
 import styles from '@/app/_components/button.module.css';
 
 type ButtonProps = {
   children: React.ReactNode;
-  className: string;
-  href: string;
-  isPrimary: boolean;
+  push: boolean;
+  to: string;
 };
 
 export default function Button({
   children,
-  className,
-  href,
-  isPrimary,
+  push = false,
+  to,
 }: ButtonProps) {
-  const Tag = href ? Link : 'button';
+  const Tag = push ? Link : 'button';
   return (
     <Tag
-      href={href ?? null}
-      className={classNames(
-        className,
-        isPrimary && styles.button,
-      )}
-      type={href ? undefined : 'button'}
+      href={to ?? null}
+      className={styles.button}
+      type={push ? undefined : 'button'}
     >
-      {children}
+      <span className={styles.button_title}>
+        {children}
+      </span>
     </Tag>
   );
 }

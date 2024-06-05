@@ -18,22 +18,16 @@ export default async function GameOverPage({
   return (
     <main className={styles.main}>
       <div className={styles.logo_container}>
-        <HandIcon className={styles.logo} />
+        <HandIcon />
       </div>
       <div className={styles.content_container}>
-        <div className={styles.title_container}>
-          <p className={styles.description}>
-            Total score:
-          </p>
-          <Heading as="h2" className={styles.heading}>
-            {`$${reward} earned`}
-          </Heading>
-        </div>
-        <Button
-          isPrimary
-          className={styles.link}
-          href="/"
-        >
+        <p className={styles.description}>
+          Total score:
+        </p>
+        <Heading as="h2" className={styles.heading}>
+          {`$${reward} earned`}
+        </Heading>
+        <Button push to="/">
           Try again
         </Button>
       </div>
