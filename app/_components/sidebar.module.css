@@ -1,9 +1,9 @@
 .container {
   background: var(--grey-light);
   width: 100%;
+  min-width: 320px;
   transition: margin-right ease-in-out 0.5s;
   position: fixed;
-  flex-shrink: 1;
   top: 0;
   bottom: 0;
   right: 0;
@@ -18,7 +18,7 @@
   margin-right: -100%;
 }
 
-.wrapper {
+.progress_group {
   display: flex;
   flex-direction: column;
   flex-flow: column-reverse;
@@ -29,8 +29,16 @@
     position: static;
     background: var(--white);
     margin: auto;
+    max-width: 320px;
   }
+
   .container_is_closed {
     margin-right: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 376px;
   }
 }

@@ -23,6 +23,16 @@
   font-weight: 600;
 }
 
+@media (min-width: 1024px) {
+  .button:hover {
+    background: var(--orange-midlight);
+  }
+
+  .button:active {
+    background: var(--orange-dark);
+  }
+}
+
 @media (min-width: 1440px) {
   .button {
     height: 64px;

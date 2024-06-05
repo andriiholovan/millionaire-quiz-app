@@ -1,4 +1,14 @@
 .progress {
+  /* mobile assets */
+  --mobile_active: url("../../public/mobile_progress_active.svg");
+  --mobile_inactive: url("../../public/mobile_progress_inactive.svg");
+  /* mobile assets */
+
+  /* desktop assets */
+  --desktop_active: url("../../public/desktop_progress_active.svg");
+  --desktop_inactive: url("../../public/desktop_progress_inactive.svg");
+  /* desktop assets */
+
   font-size: 14px;
   text-align: left;
   height: 32px;
@@ -9,17 +19,17 @@
 
 .progress_next {
   color: var(--grey-dark);
-  background: url("../../public/mobile_progress_inactive.svg") no-repeat;
+  background: var(--mobile_inactive);
 }
 
 .progress_current {
   color: var(--orange-bright);
-  background: url("../../public/mobile_progress_active.svg") no-repeat;
+  background: var(--mobile_active);
 }
 
 .progress_previous {
   color: var(--grey-midlight);
-  background: url("../../public/mobile_progress_inactive.svg") no-repeat;
+  background: var(--mobile_inactive);
 }
 
 .progress_title {
@@ -27,4 +37,24 @@
   justify-content: center;
   align-items: center;
   margin-top: 8px;
+}
+
+@media (min-width: 1440px) {
+  .progress {
+    font-size: 20px;
+    height: 40px;
+    width: 376px;
+  }
+
+  .progress_next {
+    background: var(--desktop_inactive);
+  }
+
+  .progress_current {
+    background: var(--desktop_active);
+  }
+
+  .progress_previous {
+    background: var(--desktop_inactive);
+  }
 }

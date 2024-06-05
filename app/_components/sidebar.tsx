@@ -34,7 +34,7 @@ export default function Sidebar({
       )}
       >
         <ButtonCross toggleSidebar={toggleSidebar} />
-        <div className={styles.wrapper}>
+        <div className={styles.progress_group}>
           {quizList.map((quiz) => (
             <ProgressItem
               key={quiz.step}
