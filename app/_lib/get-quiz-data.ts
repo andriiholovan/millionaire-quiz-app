@@ -1,4 +1,5 @@
 // import { revalidatePath } from 'next/cache';
+import { notFound } from 'next/navigation';
 import { QuizElement, QuizList, QuizListSchema } from '@/app/_lib/schema';
 
 const { QUIZ_DATA_URL = 'https://api.npoint.io/b7bd9c92c028169450f0' } = process.env;
@@ -21,6 +22,6 @@ export async function getQuizElement(
 ): Promise<QuizElement> {
   const list = await getQuizList();
   const element = list.find((item) => item.step === Number(id));
-  if (!element) throw new Error();
+  if (!element) notFound();
   return element;
 }
