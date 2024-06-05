@@ -8,7 +8,7 @@ export const QuizListSchema = z.array(
     answers: z.array(z.object({
       id: z.string(),
       isCorrect: z.boolean(),
-      title: z.string(),
+      title: z.string().max(30),
     })),
   }),
 )
