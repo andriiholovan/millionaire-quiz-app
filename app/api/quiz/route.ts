@@ -16,16 +16,15 @@ export async function GET(request: NextRequest) {
   }
   const currentStep = JSON.parse(step);
   const quizList = await getQuizList();
-  const lastQuiz = quizList.at(-1)?.step;
-
-  if (lastQuiz === currentStep) {
-    return redirect(`/game-over/${currentStep}`);
-  }
+  const lastQuizStep = quizList.at(-1)?.step;
 
   const isCorrect = await checkQuizAnswer(step, answer);
-  if (!isCorrect) {
-    return redirect(`/game-over/${currentStep}`);
-  }
 
+  if (isCorrect && currentStep === lastQuizStep) {
+    redirect(`/game-over/${currentStep}`);
+  }
+  if (!isCorrect) {
+    redirect(`/game-over/${currentStep - 1}`);
+  }
   redirect(`/quiz/${currentStep + 1}`);
 }

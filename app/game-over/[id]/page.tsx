@@ -3,7 +3,7 @@ import HandIcon from '@/app/_components/hand-icon';
 import Heading from '@/app/_components/heading';
 
 import styles from '@/app/game-over/[id]/page.module.css';
-import { getQuizElement } from '@/app/_lib/get-quiz-data';
+import { getQuizList } from '@/app/_lib/get-quiz-data';
 
 type GameOverPageProps = {
   params: {
@@ -14,7 +14,8 @@ type GameOverPageProps = {
 export default async function GameOverPage({
   params,
 }: GameOverPageProps) {
-  const { reward } = await getQuizElement(params.id);
+  const quizList = await getQuizList();
+  const reward = quizList[+params.id - 1]?.reward ?? 0;
   return (
     <main className={styles.main}>
       <div className={styles.logo_container}>
