@@ -6,4 +6,4 @@ package-lock.json
 **/*.test.js
 coverage
 .idea
-vitest.config.ts
+vitest.config.mts
