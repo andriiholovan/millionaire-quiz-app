@@ -1,0 +1,43 @@
+'use server';
+
+import { wait } from 'next/dist/lib/wait';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
+import checkQuizAnswer from '@/app/_lib/check-quiz-answer';
+import { deleteCookie, setCookie, STEP } from '@/app/_lib/cookies';
+import { getQuizList } from '@/app/_lib/get-quiz-data';
+
+export default async function processAnswer(formData: FormData) {
+  const url = headers().get('referer') as string;
+  const step = new URL(url).pathname.split('/').at(-1);
+  const answer = formData.get('id') as string;
+
+  if (!step || !answer) {
+    deleteCookie(STEP);
+    redirect('/');
+  }
+
+  const currentStep = JSON.parse(step);
+  const prevStep = currentStep - 1;
+  const nextStep = currentStep + 1;
+  const quizList = await getQuizList();
+  const lastQuizStep = quizList.at(-1)?.step;
+  const isLastStep = currentStep === lastQuizStep;
+  const isCorrect = await checkQuizAnswer(step, answer);
+
+  // delay the immediate transition to create some magic with animations
+  await wait(2000);
+
+  if (!isCorrect) {
+    deleteCookie(STEP);
+    redirect(`/game-over/${prevStep}`);
+  }
+
+  if (isLastStep) {
+    deleteCookie(STEP);
+    redirect(`/game-over/${currentStep}`);
+  }
+
+  setCookie(STEP, nextStep);
+  redirect(`/quiz/${currentStep + 1}`);
+}

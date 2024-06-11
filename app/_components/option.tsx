@@ -1,22 +1,27 @@
+import { useFormStatus } from 'react-dom';
+
 type OptionProps = {
   id: string;
   className: string;
   children: React.ReactNode;
-  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export default function Option({
   id,
   className,
   children,
-  handleClick,
+  onClick,
 }: OptionProps) {
+  const { pending } = useFormStatus();
   return (
     <button
-      data-id={id}
+      name="id"
+      value={id}
       className={className}
-      onClick={handleClick}
-      type="button"
+      disabled={pending}
+      onClick={onClick}
+      type="submit"
     >
       {children}
     </button>

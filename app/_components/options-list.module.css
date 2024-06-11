@@ -35,11 +35,11 @@
 }
 
 .answer_correct {
-  animation: correct 0.8s infinite;
+  animation: 0.8s correct 0.8s infinite;
 }
 
 .answer_incorrect {
-  animation: incorrect 0.8s infinite;
+  animation: 0.8s incorrect 0.8s infinite;
 }
 
 @keyframes correct {
@@ -112,11 +112,11 @@
   }
 
   .answer_correct {
-    animation: correct 0.8s infinite;
+    animation: 0.8s correct 0.8s infinite;
   }
 
   .answer_incorrect {
-    animation: incorrect 0.8s infinite;
+    animation: 0.8s incorrect 0.8s infinite;
   }
 
   .answer_label {

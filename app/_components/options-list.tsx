@@ -1,12 +1,11 @@
 'use client';
 
 import classNames from 'classnames';
-import { wait } from 'next/dist/lib/wait';
-import { useParams, useRouter } from 'next/navigation';
-import React from 'react';
+import { useState } from 'react';
+import processAnswer from '@/app/_actions/process-answer';
 import Option from '@/app/_components/option';
-import { AnswerElement, AnswersList } from '@/app/_lib/schema';
 import getOptionLabel from '@/app/_lib/getOptionLabel';
+import { AnswersList } from '@/app/_lib/schema';
 
 import styles from '@/app/_components/options-list.module.css';
 
@@ -17,25 +16,14 @@ type OptionsListProps = {
 export default function OptionsList({
   answers,
 }: OptionsListProps) {
-  const [selected, setSelected] = React.useState<string>('');
-  const params = useParams();
-  const router = useRouter();
+  const [selected, setSelected] = useState<string>('');
 
-  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
-    if (selected) return;
-    const answerId = e.currentTarget.dataset.id as AnswerElement['id'];
-
-    // delay magic with animations
-    await wait(500);
-    setSelected(answerId);
-    await wait(2000);
-
-    const { url } = await fetch(`/api/quiz?step=${params.id}&answer=${answerId}`);
-    router.push(url);
+  const onSubmitClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    setSelected(event.currentTarget.value);
   };
 
   return (
-    <div className={styles.options_group}>
+    <form action={processAnswer} className={styles.options_group}>
       {answers.map((answer) => {
         const label = getOptionLabel(answer.id);
         const isSelected = answer.id === selected;
@@ -49,7 +37,7 @@ export default function OptionsList({
               isSelected && !isCorrect && styles.answer_incorrect,
               isSelected && isCorrect && styles.answer_correct,
             )}
-            handleClick={handleClick}
+            onClick={onSubmitClick}
           >
             <span className={styles.answer_label}>
               {label}
@@ -60,6 +48,6 @@ export default function OptionsList({
           </Option>
         );
       })}
-    </div>
+    </form>
   );
 }
