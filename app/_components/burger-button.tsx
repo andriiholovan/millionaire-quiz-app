@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 import BurgerIcon from '@/public/burger.svg';
 
 import styles from '@/app/_components/burger-button.module.css';

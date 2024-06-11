@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import { useParams } from 'next/navigation';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BurgerButton from '@/app/_components/burger-button';
 import ButtonCross from '@/app/_components/button-cross';
 import ProgressItem from '@/app/_components/progress-item';

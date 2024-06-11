@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import React from 'react';
 
 import styles from '@/app/_components/progress-item.module.css';
 
