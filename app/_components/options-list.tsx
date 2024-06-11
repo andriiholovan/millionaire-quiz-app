@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import processAnswer from '@/app/_actions/process-answer';
 import Option from '@/app/_components/option';
-import getOptionLabel from '@/app/_lib/getOptionLabel';
+import getOptionLabel from '@/app/_lib/get-option-label';
 import { AnswersList } from '@/app/_lib/schema';
 
 import styles from '@/app/_components/options-list.module.css';
