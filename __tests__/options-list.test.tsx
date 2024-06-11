@@ -1,6 +1,6 @@
 import { expect, vi, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Options from '../app/_components/options-list';
+import OptionsList from '../app/_components/options-list';
 
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation');
@@ -13,12 +13,20 @@ vi.mock('next/navigation', async () => {
   };
 });
 
+vi.mock('react-dom', async () => {
+  const actual = await vi.importActual('react-dom');
+  return {
+    ...actual,
+    useFormStatus: vi.fn(() => ({ pending: false })),
+  };
+});
+
 test('Options buttons', () => {
   const answers = [
     { id: 'A', title: 'option 1', isCorrect: true },
     { id: 'B', title: 'option 2', isCorrect: false },
   ];
-  render(<Options answers={answers} />);
+  render(<OptionsList answers={answers} />);
   const buttons = screen.getAllByRole('button');
   expect(buttons).toHaveLength(2);
 });
