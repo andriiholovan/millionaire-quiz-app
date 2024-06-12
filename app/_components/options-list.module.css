@@ -30,7 +30,7 @@
   background: var(--mobile_inactive);
 }
 
-.answer:active, .answer:hover {
+.answer:active {
   background: var(--mobile_selected);
 }
 
@@ -90,6 +90,10 @@
 }
 
 @media (min-width: 1024px) {
+  .answer:hover, .answer:active {
+    background: var(--mobile_selected);
+  }
+
   .options_group {
     flex-direction: row;
   }
