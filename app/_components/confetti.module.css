@@ -7,7 +7,7 @@
 }
 
 .ball {
-  animation-iteration-count: infinite !important;
+  animation-iteration-count: infinite;
   border-radius: 50%;
   cursor: default;
   display: inline-block;
