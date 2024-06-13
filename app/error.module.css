@@ -30,6 +30,12 @@
   padding: 16px 24px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    filter: brightness(115%)
+  }
+}
+
 .button:active {
   filter: brightness(85%)
 }
@@ -40,16 +46,6 @@
 
 .start_over {
   background: var(--red-bright);
-}
-
-@media (min-width: 1024px) {
-  .button:hover {
-    filter: brightness(115%)
-  }
-
-  .button:active {
-    filter: brightness(85%)
-  }
 }
 
 @media (min-width: 1440px) {

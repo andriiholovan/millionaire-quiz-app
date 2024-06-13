@@ -13,6 +13,12 @@
   margin-bottom: 32px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background: var(--orange-midlight);
+  }
+}
+
 .button:active {
   background: var(--orange-dark);
 }
@@ -20,16 +26,6 @@
 .button_title {
   font-size: 14px;
   font-weight: 600;
-}
-
-@media (min-width: 1024px) {
-  .button:hover {
-    background: var(--orange-midlight);
-  }
-
-  .button:active {
-    background: var(--orange-dark);
-  }
 }
 
 @media (min-width: 1440px) {
