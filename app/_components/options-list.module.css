@@ -1,21 +1,7 @@
 .options_group {
-  /* mobile assets */
-  --mobile_correct: url("../../public/mobile_option_correct.svg");
-  --mobile_inactive: url("../../public/mobile_option_inactive.svg");
-  --mobile_incorrect: url("../../public/mobile_option_incorrect.svg");
-  --mobile_selected: url("../../public/mobile_option_selected.svg");
-  /* mobile assets */
-
-  /* desktop assets */
-  --desktop_correct: url("../../public/desktop_option_correct.svg");
-  --desktop_inactive: url("../../public/desktop_option_inactive.svg");
-  --desktop_incorrect: url("../../public/desktop_option_incorrect.svg");
-  --desktop_hover: url("../../public/desktop_option_hover.svg");
-  --desktop_selected: url("../../public/desktop_option_selected.svg");
-  /* desktop assets */
-
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 24px auto 0;
 }
 
@@ -27,17 +13,27 @@
   margin-bottom: 8px;
   border: none;
   cursor: pointer;
-  background: var(--mobile_inactive);
+  background: var(--option-background-inactive);
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    height: 72px;
+    width: 405px;
+  }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .answer:hover {
-    background: var(--mobile_selected);
+.answer:hover {
+  @media (hover: hover) and (pointer: fine) {
+    background: var(--option-background-hover);
   }
 }
 
 .answer:active {
-  background: var(--mobile_selected);
+  background: var(--option-background-selected);
 }
 
 .answer_correct {
@@ -50,19 +46,19 @@
 
 @keyframes correct {
   from {
-    background: var(--mobile_inactive);
+    background: var(--option-background-inactive);
   }
   to {
-    background: var(--mobile_correct);
+    background: var(--option-background-correct);
   }
 }
 
 @keyframes incorrect {
   from {
-    background: var(--mobile_inactive);
+    background: var(--option-background-inactive);
   }
   to {
-    background: var(--mobile_incorrect);
+    background: var(--option-background-incorrect);
   }
 }
 
@@ -71,80 +67,19 @@
   font-size: 14px;
   font-weight: 600;
   margin-left: 40px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    margin-left: 48px;
+  }
 }
 
 .answer_title {
   color: var(--grey-dark);
   font-weight: 400;
   margin-left: 8px;
-}
-
-@media (min-width: 768px) {
-  .options_group {
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-  }
-
-  .answer {
-    font-size: 16px;
-  }
-
-  .answer_label {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .options_group {
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 1440px) {
-  .answer {
-    font-size: 20px;
-    height: 72px;
-    width: 405px;
-    background: var(--desktop_inactive);
-  }
-
-  .answer:hover {
-    background: var(--desktop_hover);
-  }
-
-  .answer:active {
-    background: var(--desktop_selected);
-  }
-
-  .answer_correct {
-    animation: 0.8s correct 0.8s infinite;
-  }
-
-  .answer_incorrect {
-    animation: 0.8s incorrect 0.8s infinite;
-  }
-
-  .answer_label {
-    font-size: 20px;
-    margin-left: 48px;
-  }
-
-  @keyframes correct {
-    from {
-      background: var(--desktop_inactive);
-    }
-    to {
-      background: var(--desktop_correct);
-    }
-  }
-
-  @keyframes incorrect {
-    from {
-      background: var(--desktop_inactive);
-    }
-    to {
-      background: var(--desktop_incorrect);
-    }
-  }
 }

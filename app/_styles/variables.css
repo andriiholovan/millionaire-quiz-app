@@ -11,4 +11,18 @@
   --grey-midlight: #D0D0D8;
   --grey-light: #F5F5F7;
   --white: #FFFFFF;
+
+  --option-background-correct: url("../../public/mobile_option_correct.svg");
+  --option-background-hover: url("../../public/mobile_option_hover.svg");
+  --option-background-inactive: url("../../public/mobile_option_inactive.svg");
+  --option-background-incorrect: url("../../public/mobile_option_incorrect.svg");
+  --option-background-selected: url("../../public/mobile_option_selected.svg");
+
+  @media (min-width: 1440px) {
+    --option-background-correct: url("../../public/desktop_option_correct.svg");
+    --option-background-hover: url("../../public/desktop_option_hover.svg");
+    --option-background-inactive: url("../../public/desktop_option_inactive.svg");
+    --option-background-incorrect: url("../../public/desktop_option_incorrect.svg");
+    --option-background-selected: url("../../public/desktop_option_selected.svg");
+  }
 }
