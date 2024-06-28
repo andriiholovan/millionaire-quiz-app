@@ -1,28 +1,53 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 
 import styles from '@/app/_components/button.module.css';
 
 type ButtonProps = {
   children: React.ReactNode;
-  push: boolean;
-  to: string;
+  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void;
+  push?: boolean;
+  to?: string;
 };
+
+type Component = 'button' | typeof Link;
 
 export default function Button({
   children,
-  push = false,
-  to,
+  className,
+  onClick,
+  push,
+  to = '',
 }: ButtonProps) {
-  const Tag = push ? Link : 'button';
+  const Tag: Component = push ? Link : 'button';
   return (
     <Tag
       href={to ?? null}
-      className={styles.button}
+      className={classNames(styles.button, className)}
+      onClick={onClick}
       type={push ? undefined : 'button'}
     >
-      <span className={styles.button_title}>
-        {children}
-      </span>
+      {children}
     </Tag>
+  );
+}
+
+export function ButtonPrimary({
+  children,
+  className,
+  onClick,
+  push,
+  to,
+}: ButtonProps) {
+  return (
+    <Button
+      to={to}
+      className={classNames(styles.button_primary, className)}
+      onClick={onClick}
+      push={push}
+    >
+      {children}
+    </Button>
   );
 }

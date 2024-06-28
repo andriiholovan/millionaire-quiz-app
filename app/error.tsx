@@ -1,11 +1,11 @@
 'use client';
 
+import classNames from 'classnames';
 import { useEffect } from 'react';
 import { z } from 'zod';
+import Button from '@/app/_components/button';
 
 import styles from '@/app/error.module.css';
-import classNames from 'classnames';
-import { useRouter } from 'next/navigation';
 
 export default function Error({
   error,
@@ -14,32 +14,30 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
-  const router = useRouter();
-
   useEffect(() => {
+    // eslint-disable-next-line
     console.error(error instanceof z.ZodError ? error.format() : error);
   }, [error]);
 
   return (
-    <main className={styles.error}>
+    <main className={styles.main}>
       <h2 className={styles.heading}>
         Something went wrong!
       </h2>
       <div className={styles.button_group}>
-        <button
+        <Button
           className={classNames(styles.button, styles.try_again)}
           onClick={() => reset()}
-          type="button"
         >
           Try again
-        </button>
-        <button
+        </Button>
+        <Button
+          push
+          to="/"
           className={classNames(styles.button, styles.start_over)}
-          onClick={() => router.push('/')}
-          type="button"
         >
           Start over
-        </button>
+        </Button>
       </div>
     </main>
   );

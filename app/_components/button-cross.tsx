@@ -12,8 +12,8 @@ export default function ButtonCross({
 }: ButtonCrossProps) {
   return (
     <button
-      onClick={toggleSidebar}
       className={styles.button}
+      onClick={toggleSidebar}
       type="button"
     >
       <Image

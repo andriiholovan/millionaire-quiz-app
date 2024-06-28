@@ -1,4 +1,4 @@
-.error {
+.main {
   height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,18 @@
 
 .heading {
   margin: auto;
+
+  @media (min-width: 1024px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 56px;
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 96px;
+  }
 }
 
 .button_group {
@@ -16,23 +28,16 @@
   flex-direction: column;
   gap: 16px;
   margin-bottom: 36px;
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    margin-bottom: auto;
+  }
 }
 
-.button {
-  cursor: pointer;
-  color: var(--white);
-  border: none;
-  text-decoration: none;
-  text-align: center;
-  height: 48px;
-  width: 288px;
-  border-radius: 8px;
-  padding: 16px 24px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .button:hover {
-    filter: brightness(115%)
+.button:hover {
+  @media (hover: hover) and (pointer: fine) {
+    filter: brightness(115%);
   }
 }
 
@@ -41,45 +46,11 @@
 }
 
 .try_again {
+  color: var(--white);
   background: var(--orange-dark);
 }
 
 .start_over {
+  color: var(--white);
   background: var(--red-bright);
-}
-
-@media (min-width: 1440px) {
-  .heading {
-    font-size: 32px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .heading {
-    font-size: 56px;
-  }
-
-  .button_group {
-    flex-direction: row;
-    margin-bottom: auto;
-  }
-
-  .button {
-    height: 64px;
-    width: 296px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .heading {
-    font-size: 96px;
-  }
-
-  .button {
-    height: 128px;
-    width: 592px;
-    border-radius: 20px;
-    font-size: 40px;
-  }
 }
