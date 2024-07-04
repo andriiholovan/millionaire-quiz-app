@@ -32,6 +32,7 @@ export default function Button({
       )}
       href={to ?? null}
       onClick={onClick}
+      prefetch={push}
       type={push ? undefined : 'button'}
     >
       {children}
