@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import BurgerIcon from '@/public/burger.svg';
+import Button from '@/app/_components/button';
 
 import styles from '@/app/_components/burger-button.module.css';
 
@@ -12,10 +13,9 @@ export default function BurgerButton({
 }: BurgerButtonProps) {
   return (
     <nav className={styles.nav}>
-      <button
-        className={styles.button}
+      <Button
+        className={styles.burger_button}
         onClick={toggleSidebar}
-        type="button"
       >
         <Image
           priority
@@ -24,7 +24,7 @@ export default function BurgerButton({
           height={24}
           width={24}
         />
-      </button>
+      </Button>
     </nav>
   );
 }

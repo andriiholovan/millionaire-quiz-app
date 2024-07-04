@@ -10,7 +10,7 @@
   min-height: 100dvh;
   min-width: 320px;
   width: 100vw;
-  padding: 16px 0 16px;
+  padding: 16px 0 24px;
   background: var(--grey-light);
 
   @media (min-width: 768px) {

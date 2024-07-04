@@ -2,9 +2,9 @@ import { useFormStatus } from 'react-dom';
 
 type OptionProps = {
   id: string;
-  className: string;
   children: React.ReactNode;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  className: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export default function Option({

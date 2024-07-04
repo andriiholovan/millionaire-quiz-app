@@ -26,12 +26,14 @@ export default function Error({
       </h2>
       <div className={styles.button_group}>
         <Button
+          isWide
           className={classNames(styles.button, styles.try_again)}
           onClick={() => reset()}
         >
           Try again
         </Button>
         <Button
+          isWide
           push
           to="/"
           className={classNames(styles.button, styles.start_over)}

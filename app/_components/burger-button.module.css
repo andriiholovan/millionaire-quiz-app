@@ -4,19 +4,14 @@
   right: 0;
   left: 0;
   z-index: 2;
-  padding: 16px;
 
   @media (min-width: 768px) {
     display: none;
   }
 }
 
-.button {
-  display: block;
-  margin-left: auto;
-  cursor: pointer;
-  border: none;
-  background: none;
+.burger_button {
+  margin: 16px 16px 16px auto;
 
   @media (min-width: 768px) {
     display: none;

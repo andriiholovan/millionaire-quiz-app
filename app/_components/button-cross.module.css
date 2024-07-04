@@ -1,8 +1,4 @@
-.button {
-  display: block;
-  cursor: pointer;
-  border: none;
-  background: none;
+.button_cross {
   margin: 16px 16px 16px auto;
 
   @media (min-width: 768px) {

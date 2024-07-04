@@ -6,7 +6,8 @@ import styles from '@/app/_components/button.module.css';
 type ButtonProps = {
   children: React.ReactNode;
   className?: string;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void;
+  isWide?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   push?: boolean;
   to?: string;
 };
@@ -16,6 +17,7 @@ type Component = 'button' | typeof Link;
 export default function Button({
   children,
   className,
+  isWide,
   onClick,
   push,
   to = '',
@@ -23,8 +25,12 @@ export default function Button({
   const Tag: Component = push ? Link : 'button';
   return (
     <Tag
+      className={classNames(
+        styles.button,
+        isWide && styles.button_wide,
+        className,
+      )}
       href={to ?? null}
-      className={classNames(styles.button, className)}
       onClick={onClick}
       type={push ? undefined : 'button'}
     >
@@ -36,16 +42,18 @@ export default function Button({
 export function ButtonPrimary({
   children,
   className,
+  isWide = true,
   onClick,
   push,
   to,
 }: ButtonProps) {
   return (
     <Button
-      to={to}
+      isWide={isWide}
       className={classNames(styles.button_primary, className)}
       onClick={onClick}
       push={push}
+      to={to}
     >
       {children}
     </Button>

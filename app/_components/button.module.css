@@ -1,17 +1,21 @@
 .button {
   text-decoration: none;
+  background: none;
   border: none;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.button_wide {
   height: 48px;
   width: 288px;
-  border-radius: 8px;
-  padding: 16px 24px;
-  cursor: pointer;
   font-size: 14px;
   font-weight: 600;
+  border-radius: 8px;
+  padding: 16px 24px;
 
   @media (min-width: 1440px) {
     height: 64px;
@@ -30,7 +34,6 @@
 .button_primary {
   color: var(--white);
   background: var(--orange-bright);
-  margin-bottom: 32px;
 }
 
 .button_primary:hover {
