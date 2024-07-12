@@ -1,4 +1,4 @@
-import { ButtonPrimary } from '@/app/_components/button';
+import Button from '@/app/_components/button';
 import Confetti from '@/app/_components/confetti';
 import HandIcon from '@/app/_components/hand-icon';
 import Heading from '@/app/_components/heading';
@@ -31,9 +31,9 @@ export default async function GameOverPage({
           <Heading as="h2" className={styles.heading}>
             {`$${reward} earned`}
           </Heading>
-          <ButtonPrimary push to="/">
+          <Button.Primary push to="/">
             Try again
-          </ButtonPrimary>
+          </Button.Primary>
         </div>
       </main>
     </>

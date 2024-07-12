@@ -1,4 +1,4 @@
-import { ButtonPrimary } from '@/app/_components/button';
+import Button from '@/app/_components/button';
 import HandIcon from '@/app/_components/hand-icon';
 import Heading from '@/app/_components/heading';
 
@@ -17,9 +17,9 @@ export default function NotFound() {
         <p className={styles.description}>
           Could not find requested resource
         </p>
-        <ButtonPrimary push to="/">
+        <Button.Primary push to="/">
           Return Home
-        </ButtonPrimary>
+        </Button.Primary>
       </div>
     </main>
   );

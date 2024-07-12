@@ -63,6 +63,8 @@ export function ButtonPrimary({
   );
 }
 
+Button.Primary = ButtonPrimary;
+
 type ButtonIconProps = {
   iconAlt: string;
   isMobile?: boolean;

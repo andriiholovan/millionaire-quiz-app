@@ -1,4 +1,4 @@
-import { ButtonPrimary } from '@/app/_components/button';
+import Button from '@/app/_components/button';
 import HandIcon from '@/app/_components/hand-icon';
 import Heading from '@/app/_components/heading';
 import { getQuizList } from '@/app/_lib/get-quiz-data';
@@ -16,9 +16,9 @@ export default async function Home() {
         <Heading as="h1" className={styles.heading}>
           Who wants to be a&nbsp;millionaire?
         </Heading>
-        <ButtonPrimary push to={`/quiz/${firstQuizOption.step}`}>
+        <Button.Primary push to={`/quiz/${firstQuizOption.step}`}>
           Start
-        </ButtonPrimary>
+        </Button.Primary>
       </div>
     </main>
   );
