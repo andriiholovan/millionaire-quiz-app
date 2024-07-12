@@ -2,10 +2,20 @@ import Button from '@/app/_components/button';
 import HandIcon from '@/app/_components/hand-icon';
 import Heading from '@/app/_components/heading';
 import { getQuizList } from '@/app/_lib/get-quiz-data';
+import throwGlobalError from '@/app/_lib/throw-global-error';
 
 import styles from '@/app/page.module.css';
 
-export default async function Home() {
+type HomePageProps = {
+  searchParams: {
+    kill_app: boolean;
+  }
+};
+
+export default async function Home({
+  searchParams,
+}: HomePageProps) {
+  if (searchParams.kill_app) throwGlobalError();
   const [firstQuizOption] = await getQuizList();
   return (
     <main className={styles.main}>

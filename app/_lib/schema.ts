@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const QuizListSchema = z.array(
   z.object({
-    step: z.number().int().min(1),
+    step: z.number().int().min(1).max(12),
     question: z.string(),
     reward: z.string(),
     answers: z.array(z.object({
