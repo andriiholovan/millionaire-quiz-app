@@ -1,7 +1,0 @@
-.button_cross {
-  margin: 16px 16px 16px auto;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-}

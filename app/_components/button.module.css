@@ -46,3 +46,13 @@
 .button_primary:active {
   background: var(--orange-dark);
 }
+
+.button_align_right {
+  margin: 16px 16px 16px auto;
+}
+
+.button_mobile {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

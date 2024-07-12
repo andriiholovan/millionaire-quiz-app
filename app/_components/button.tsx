@@ -1,4 +1,6 @@
 import classNames from 'classnames';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from '@/app/_components/button.module.css';
@@ -60,3 +62,45 @@ export function ButtonPrimary({
     </Button>
   );
 }
+
+type ButtonIconProps = {
+  iconAlt: string;
+  isMobile?: boolean;
+  isRightAligned?: boolean;
+  src: string | StaticImport;
+};
+
+export function ButtonIcon({
+  className,
+  iconAlt,
+  isMobile = true,
+  isRightAligned = true,
+  onClick,
+  src,
+  push,
+  to,
+}: Omit<ButtonProps, 'children'> & ButtonIconProps) {
+  return (
+    <Button
+      className={classNames(
+        styles.button,
+        isMobile && styles.button_mobile,
+        isRightAligned && styles.button_align_right,
+        className,
+      )}
+      onClick={onClick}
+      push={push}
+      to={to}
+    >
+      <Image
+        priority
+        src={src}
+        alt={iconAlt}
+        height={24}
+        width={24}
+      />
+    </Button>
+  );
+}
+
+Button.Icon = ButtonIcon;

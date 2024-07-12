@@ -15,7 +15,7 @@ export default function NotFound() {
           Not Found
         </Heading>
         <p className={styles.description}>
-          Could not find requested resource.
+          Could not find requested resource
         </p>
         <ButtonPrimary push to="/">
           Return Home
