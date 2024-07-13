@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import processAnswer from '@/app/_actions/process-answer';
-import Option from '@/app/_components/option';
+import OptionItem from '@/app/_components/option-item';
 import getOptionLabel from '@/app/_lib/get-option-label';
 import { AnswersList } from '@/app/_lib/schema';
 
@@ -29,7 +29,7 @@ export default function OptionsList({
         const isSelected = answer.id === selected;
         const { isCorrect = false } = answers[+selected];
         return (
-          <Option
+          <OptionItem
             key={answer.id}
             id={answer.id}
             className={classNames(
@@ -45,7 +45,7 @@ export default function OptionsList({
             <span className={styles.answer_title}>
               {answer.title}
             </span>
-          </Option>
+          </OptionItem>
         );
       })}
     </form>

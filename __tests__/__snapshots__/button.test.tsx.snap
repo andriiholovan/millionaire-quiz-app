@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BUTTON COMPONENT > Should match snapshot of <a> element 1`] = `
+<DocumentFragment>
+  <a
+    class="_button_6961ec"
+    href="/"
+  >
+    Start
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BUTTON COMPONENT > Should match snapshot of <button> element with default props only 1`] = `
+<DocumentFragment>
+  <button
+    class="_button_6961ec"
+    type="button"
+  >
+    Start
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BUTTON COMPONENT > Should match snapshot of Button.Icon component 1`] = `
+<DocumentFragment>
+  <button
+    class="_button_6961ec _button_mobile_6961ec _button_align_right_6961ec"
+    type="button"
+  >
+    <img
+      alt="Alt text"
+      data-nimg="1"
+      decoding="async"
+      fetchpriority="high"
+      height="24"
+      src="/_next/image?url=%2Fpath%2Fto%2Fany%2Ficon&w=48&q=75"
+      srcset="/_next/image?url=%2Fpath%2Fto%2Fany%2Ficon&w=32&q=75 1x, /_next/image?url=%2Fpath%2Fto%2Fany%2Ficon&w=48&q=75 2x"
+      style="color: transparent;"
+      width="24"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BUTTON COMPONENT > Should match snapshot of Button.Primary component 1`] = `
+<DocumentFragment>
+  <a
+    class="_button_6961ec _button_wide_6961ec _button_primary_6961ec"
+    href="/"
+  >
+    Start
+  </a>
+</DocumentFragment>
+`;

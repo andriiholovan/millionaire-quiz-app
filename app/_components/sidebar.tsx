@@ -1,25 +1,21 @@
 'use client';
 
 import classNames from 'classnames';
-import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from '@/app/_components/button';
-import ProgressItem from '@/app/_components/progress-item';
-import { QuizList } from '@/app/_lib/schema';
 import BurgerIcon from '@/public/burger.svg';
 import CrossIcon from '@/public/cross.svg';
 
 import styles from '@/app/_components/sidebar.module.css';
 
 type SidebarProps = {
-  quizList: QuizList
+  children: React.ReactNode;
 };
 
 export default function Sidebar({
-  quizList,
+  children,
 }: SidebarProps) {
   const [isOpen, setOpen] = useState(false);
-  const params = useParams();
 
   const toggleSidebar = () => {
     setOpen(!isOpen);
@@ -45,16 +41,7 @@ export default function Sidebar({
           onClick={toggleSidebar}
           src={CrossIcon}
         />
-        <div className={styles.progress_group}>
-          {quizList.map((quiz) => (
-            <ProgressItem
-              key={quiz.step}
-              id={+params.id}
-              reward={quiz.reward}
-              step={quiz.step}
-            />
-          ))}
-        </div>
+        {children}
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import Heading from '@/app/_components/heading';
 import OptionsList from '@/app/_components/options-list';
+import ProgressList from '@/app/_components/progress-list';
 import Sidebar from '@/app/_components/sidebar';
 import { getQuizElement, getQuizList } from '@/app/_lib/get-quiz-data';
 
@@ -24,7 +25,9 @@ export default async function QuizPage({
         </Heading>
         <OptionsList answers={answers} />
       </main>
-      <Sidebar quizList={quizList} />
+      <Sidebar>
+        <ProgressList id={+params.id} quizList={quizList} />
+      </Sidebar>
     </div>
   );
 }

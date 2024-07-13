@@ -1,17 +1,18 @@
-import { expect, vi, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
+import {
+  cleanup,
+  render,
+  RenderResult,
+  screen,
+} from '@testing-library/react';
 import OptionsList from '../app/_components/options-list';
-
-vi.mock('next/navigation', async () => {
-  const actual = await vi.importActual('next/navigation');
-  return {
-    ...actual,
-    useRouter: vi.fn(() => ({
-      push: vi.fn(),
-    })),
-    useParams: vi.fn(() => ({ id: 1 })),
-  };
-});
 
 vi.mock('react-dom', async () => {
   const actual = await vi.importActual('react-dom');
@@ -21,12 +22,25 @@ vi.mock('react-dom', async () => {
   };
 });
 
-test('Options buttons', () => {
+describe('OPTION LIST', () => {
+  let container: RenderResult;
   const answers = [
     { id: 'A', title: 'option 1', isCorrect: true },
     { id: 'B', title: 'option 2', isCorrect: false },
   ];
-  render(<OptionsList answers={answers} />);
-  const buttons = screen.getAllByRole('button');
-  expect(buttons).toHaveLength(2);
+
+  beforeEach(() => {
+    container = render(<OptionsList answers={answers} />);
+  });
+
+  afterEach(cleanup);
+
+  it('Should match snapshot', () => {
+    expect(container.asFragment()).toMatchSnapshot();
+  });
+
+  it('Should render list of option buttons', () => {
+    const buttons = screen.getAllByRole('button');
+    expect(buttons).toHaveLength(2);
+  });
 });

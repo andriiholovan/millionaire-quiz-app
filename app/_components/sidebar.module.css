@@ -44,9 +44,3 @@
     margin-right: 0;
   }
 }
-
-.progress_group {
-  display: flex;
-  flex-direction: column;
-  flex-flow: column-reverse;
-}

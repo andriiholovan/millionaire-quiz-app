@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PROGRESS LIST > Should match snapshot 1`] = `
+<DocumentFragment>
+  <ul
+    class="_progress_group_aa8a78"
+  >
+    <li
+      class="_progress_aa8a78 _progress_current_aa8a78"
+    >
+      500
+    </li>
+    <li
+      class="_progress_aa8a78 _progress_next_aa8a78"
+    >
+      64,000
+    </li>
+    <li
+      class="_progress_aa8a78 _progress_next_aa8a78"
+    >
+      1,000,000
+    </li>
+  </ul>
+</DocumentFragment>
+`;

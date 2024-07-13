@@ -7,7 +7,7 @@ type OptionProps = {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export default function Option({
+export default function OptionItem({
   id,
   className,
   children,

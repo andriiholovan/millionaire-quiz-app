@@ -1,0 +1,40 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OPTION LIST > Should match snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="_options_group_2ab0b1"
+  >
+    <button
+      class="_answer_2ab0b1"
+      name="id"
+      type="submit"
+      value="A"
+    >
+      <span
+        class="_answer_label_2ab0b1"
+      />
+      <span
+        class="_answer_title_2ab0b1"
+      >
+        option 1
+      </span>
+    </button>
+    <button
+      class="_answer_2ab0b1"
+      name="id"
+      type="submit"
+      value="B"
+    >
+      <span
+        class="_answer_label_2ab0b1"
+      />
+      <span
+        class="_answer_title_2ab0b1"
+      >
+        option 2
+      </span>
+    </button>
+  </form>
+</DocumentFragment>
+`;

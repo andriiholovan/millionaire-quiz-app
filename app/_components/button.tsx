@@ -14,31 +14,38 @@ type ButtonProps = {
   to?: string;
 };
 
-type Component = 'button' | typeof Link;
-
 export default function Button({
   children,
   className,
   isWide,
   onClick,
   push,
-  to = '',
+  to = '#',
 }: ButtonProps) {
-  const Tag: Component = push ? Link : 'button';
+  const commonClassNames = classNames(
+    styles.button,
+    isWide && styles.button_wide,
+    className,
+  );
   return (
-    <Tag
-      className={classNames(
-        styles.button,
-        isWide && styles.button_wide,
-        className,
-      )}
-      href={to ?? null}
-      onClick={onClick}
-      prefetch={push}
-      type={push ? undefined : 'button'}
-    >
-      {children}
-    </Tag>
+    push ? (
+      <Link
+        prefetch
+        className={commonClassNames}
+        href={to}
+        onClick={onClick}
+      >
+        {children}
+      </Link>
+    ) : (
+      <button
+        className={commonClassNames}
+        onClick={onClick}
+        type="button"
+      >
+        {children}
+      </button>
+    )
   );
 }
 
@@ -85,7 +92,6 @@ export function ButtonIcon({
   return (
     <Button
       className={classNames(
-        styles.button,
         isMobile && styles.button_mobile,
         isRightAligned && styles.button_align_right,
         className,
