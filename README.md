@@ -1,4 +1,4 @@
-# Millionaire game quiz. [[live_application]](https://millionaire-app-quiz.vercel.app/)
+# Millionaire game quiz. [[live_application]](https://millionaire-app-quiz.vercel.app/) ![Test workflow](https://github.com/andriiholovan/millionaire-quiz-app/actions/workflows/test.yml/badge.svg)
 [![Main screen of the application](main_screen.png)](https://millionaire-app-quiz.vercel.app/)
 
 ## Description
