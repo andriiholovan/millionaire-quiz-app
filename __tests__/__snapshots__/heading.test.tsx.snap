@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HEADING COMPONENT > Should match snapshot of component with h1 tag 1`] = `
+<DocumentFragment>
+  <h1>
+    Who wants to be a millionaire?
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`HEADING COMPONENT > Should match snapshot of component with h2 tag 1`] = `
+<DocumentFragment>
+  <h2
+    class="heading className here"
+  >
+    Who wants to be a millionaire?
+  </h2>
+</DocumentFragment>
+`;

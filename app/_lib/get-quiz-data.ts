@@ -5,14 +5,11 @@ const { QUIZ_DATA_URL = 'https://api.npoint.io/b7bd9c92c028169450f0' } = process
 
 export async function getQuizList(): Promise<QuizList> {
   const data = await fetch(QUIZ_DATA_URL).then((res) => res.json());
-  const validData = QuizListSchema.safeParse(data);
-  if (validData.success) {
-    return validData.data;
+  const parsedData = QuizListSchema.safeParse(data);
+  if (parsedData.error) {
+    throw parsedData.error;
   }
-  if (validData.error) {
-    throw validData.error;
-  }
-  return [];
+  return parsedData.data;
 }
 
 export async function getQuizElement(
