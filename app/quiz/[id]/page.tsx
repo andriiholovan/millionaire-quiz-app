@@ -12,6 +12,8 @@ type QuizPageProps = {
   }
 };
 
+export const dynamic = 'force-static';
+
 export default async function QuizPage({
   params,
 }: QuizPageProps) {
