@@ -5,7 +5,7 @@
 
 Project is a quiz application based on **Next.js**, the React Framework for the Web.
 It's responsive from **320px** to **4K** displays.
-Added custom [not-found](https://millionaire-app-quiz.vercel.app/nonexistent_url) and [error-boundary](https://millionaire-app-quiz.vercel.app/?kill_app=true) pages. Also, present pre-commit/pre-push hooks.
+Added custom [not-found](https://millionaire-app-quiz.vercel.app/non-existent-url) and [error-boundary](https://millionaire-app-quiz.vercel.app/kill-app?force) pages. Also, present pre-commit/pre-push hooks.
 
 ### Roadmap
 - [WIP] Authorization to save user's progress in PostgresDB.
