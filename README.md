@@ -3,16 +3,19 @@
 
 ## Description
 
-Project is a quiz application based on **Next.js**, the React Framework for the Web.
-It's responsive from **320px** to **4K** displays.
-Added custom [not-found](https://millionaire-app-quiz.vercel.app/non-existent-url) and [error-boundary](https://millionaire-app-quiz.vercel.app/kill-app?force) pages. Also, present pre-commit/pre-push hooks.
+Project is a quiz application based on [Next.js](https://nextjs.org/).
+Styling: CSS Modules. App is responsive from **320px** to **4K** displays.
+Added custom [not-found](https://millionaire-app-quiz.vercel.app/non-existent-url) and [error-boundary](https://millionaire-app-quiz.vercel.app/kill-app?force) pages.
+Also, present pre-commit/~~pre-push~~ (moved to [`test.yml`](https://github.com/andriiholovan/millionaire-quiz-app/blob/main/.github/workflows/test.yml) GitHub CI workflow) hooks.
 
-### Roadmap
-- [WIP] Authorization to save user's progress in PostgresDB.
-- Storing quiz question's list in separate table.
-- Protected admin page to add/update/delete quiz questions.
-- Public API to remotely revalidate app cache by PostgresDB hook (on quiz questions table data change).
-- Gemini llm integration to make hints feature for user (like 50/50 hint, emulation of the "call to your friend" hint, etc.)   
+## Roadmap
+- [x] add @vercel/speed-insights and optimize app Core Web Vitals.
+- [ ] add @vercel/toolbar and optimize app accessibility.
+- [ ] [WIP] Authorization to save user's progress in PostgresDB.
+- [ ] Storing quiz question's list in separate table.
+- [ ] Protected admin page to add/update/delete quiz questions.
+- [ ] Public API to remotely revalidate app cache by PostgresDB hook (on quiz questions table data change).
+- [ ] Gemini LLM integration to implement hints feature for user (like 50/50 hint, emulation of the "call to your friend" hint, etc.)   
 
 ## Getting Started
 
