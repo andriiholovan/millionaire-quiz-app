@@ -30,7 +30,7 @@ export default function Sidebar({
           src={BurgerIcon}
         />
       </nav>
-      <div className={classNames(
+      <aside className={classNames(
         styles.container,
         isOpen && styles.container_is_open,
         !isOpen && styles.container_is_closed,
@@ -42,7 +42,7 @@ export default function Sidebar({
           src={CrossIcon}
         />
         {children}
-      </div>
+      </aside>
     </>
   );
 }

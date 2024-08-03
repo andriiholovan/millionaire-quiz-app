@@ -18,24 +18,22 @@ export default async function GameOverPage({
   const quizList = await getQuizList();
   const reward = quizList[+params.id - 1]?.reward ?? 0;
   return (
-    <>
+    <main className={styles.main}>
       {params.id === '12' ? <Confetti /> : null}
-      <main className={styles.main}>
-        <div className={styles.logo_container}>
-          <HandIcon />
-        </div>
-        <div className={styles.content_container}>
-          <p className={styles.description}>
-            Total score:
-          </p>
-          <Heading as="h2" className={styles.heading}>
-            {`$${reward} earned`}
-          </Heading>
-          <Button.Primary push to="/">
-            Try again
-          </Button.Primary>
-        </div>
-      </main>
-    </>
+      <div className={styles.logo_container}>
+        <HandIcon />
+      </div>
+      <div className={styles.content_container}>
+        <p className={styles.description}>
+          Total score:
+        </p>
+        <Heading as="h2" className={styles.heading}>
+          {`$${reward} earned`}
+        </Heading>
+        <Button.Primary push to="/">
+          Try again
+        </Button.Primary>
+      </div>
+    </main>
   );
 }

@@ -18,16 +18,16 @@ export default async function QuizPage({
   const quizList = await getQuizList();
   const { question, answers } = await getQuizElement(params.id);
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
+    <main className={styles.main}>
+      <section className={styles.section}>
         <Heading as="h2" className={styles.heading}>
           {question}
         </Heading>
         <OptionsList answers={answers} />
-      </main>
+      </section>
       <Sidebar>
         <ProgressList id={+params.id} quizList={quizList} />
       </Sidebar>
-    </div>
+    </main>
   );
 }

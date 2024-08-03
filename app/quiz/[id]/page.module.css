@@ -1,8 +1,8 @@
-.container {
+.main {
   display: flex;
 }
 
-.main {
+.section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
