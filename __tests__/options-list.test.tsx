@@ -12,7 +12,7 @@ import {
   RenderResult,
   screen,
 } from '@testing-library/react';
-import OptionsList from '../app/_components/options-list';
+import OptionsList from '@/app/_components/options-list';
 
 vi.mock('react-dom', async () => {
   const actual = await vi.importActual('react-dom');

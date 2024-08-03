@@ -11,7 +11,7 @@ import {
   RenderResult,
   screen,
 } from '@testing-library/react';
-import ProgressList from '../app/_components/progress-list';
+import ProgressList from '@/app/_components/progress-list';
 
 describe('PROGRESS LIST', () => {
   let container: RenderResult;

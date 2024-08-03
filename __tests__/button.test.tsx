@@ -11,7 +11,7 @@ import {
   render,
   screen,
 } from '@testing-library/react';
-import Button from '../app/_components/button';
+import Button from '@/app/_components/button';
 
 describe('BUTTON COMPONENT', () => {
   afterEach(() => {

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import { revalidatePath } from 'next/cache';
 import { useEffect } from 'react';
-import { z } from 'zod';
+import z from 'zod';
 import Button from '@/app/_components/button';
 
 import styles from '@/app/error.module.css';

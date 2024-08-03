@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from '@/app/_components/button';
 import BurgerIcon from '@/public/burger.svg';
 import CrossIcon from '@/public/cross.svg';

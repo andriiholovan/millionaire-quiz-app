@@ -8,7 +8,7 @@ import {
   cleanup,
   render,
 } from '@testing-library/react';
-import Heading from '../app/_components/heading';
+import Heading from '@/app/_components/heading';
 
 describe('HEADING COMPONENT', () => {
   afterEach(cleanup);

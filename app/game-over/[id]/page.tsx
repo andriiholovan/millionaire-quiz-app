@@ -2,9 +2,9 @@ import Button from '@/app/_components/button';
 import Confetti from '@/app/_components/confetti';
 import HandIcon from '@/app/_components/hand-icon';
 import Heading from '@/app/_components/heading';
+import { getQuizList } from '@/app/_lib/get-quiz-data';
 
 import styles from '@/app/game-over/[id]/page.module.css';
-import { getQuizList } from '@/app/_lib/get-quiz-data';
 
 type GameOverPageProps = {
   params: {
