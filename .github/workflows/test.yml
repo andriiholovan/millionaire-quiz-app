@@ -1,9 +1,9 @@
-name: test
+name: Test
 
-on: [push, pull_request]
+on: [workflow_call, pull_request]
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
