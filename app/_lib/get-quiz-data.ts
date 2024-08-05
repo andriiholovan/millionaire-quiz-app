@@ -13,7 +13,7 @@ export async function getQuizList(): Promise<QuizList> {
 }
 
 export async function getQuizElement(
-  id: string,
+  id: number,
 ): Promise<QuizElement> {
   const list = await getQuizList();
   const element = list.find((item) => item.step === Number(id));

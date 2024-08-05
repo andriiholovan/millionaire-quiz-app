@@ -22,7 +22,7 @@ vi.mock('@/app/_lib/get-quiz-data', async () => {
 
 describe('checkQuizAnswer helper', () => {
   it('Should return correct answer', async () => {
-    const step = '1';
+    const step = 1;
     const answer = '1';
 
     const result = await checkQuizAnswer(step, answer);
@@ -30,13 +30,13 @@ describe('checkQuizAnswer helper', () => {
   });
 
   it('Should return incorrect answer', async () => {
-    let step = '1';
+    let step = 1;
     let answer = '0';
 
     const result1 = await checkQuizAnswer(step, answer);
     expect(result1).toEqual(false);
 
-    step = '123456789';
+    step = 123456789;
     answer = 'random string';
     const result2 = await checkQuizAnswer(step, answer);
     expect(result2).toEqual(false);

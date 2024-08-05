@@ -2,7 +2,7 @@ import { AnswerElement } from '@/app/_lib/schema';
 import { getQuizElement } from '@/app/_lib/get-quiz-data';
 
 export default async function checkQuizAnswer(
-  step: string,
+  step: number,
   answer: AnswerElement['id'],
 ): Promise<boolean> {
   const { answers } = await getQuizElement(step);

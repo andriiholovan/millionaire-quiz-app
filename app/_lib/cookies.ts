@@ -1,9 +1,9 @@
 import { cookies } from 'next/headers';
 
-const ONE_HOUR: number = 60 * 60 * 1000;
-export const STEP: string = 'step';
+const ONE_HOUR = 3_600_000; // one-hour period
+export const STEP = 'millionaire-quiz-step';
 
-export function setCookie(key: string, value: string): void {
+export function setCookie(key: string, value: number): void {
   cookies()
     .set(
       key,
