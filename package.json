@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.1.0",
-    "@vercel/toolbar": "^0.1.28",
+    "@vercel/toolbar": "^0.1.30",
     "classnames": "^2.5.1",
-    "next": "^14.2.20",
+    "next": "^14.2.22",
     "react": "^18.3.1",
     "react-canvas-confetti": "^2.0.7",
     "react-dom": "^18.3.1",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@testing-library/react": "^16.1.0",
     "@types/node": "^22.10.2",
-    "@types/react": "^18.3.16",
+    "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -34,14 +34,14 @@
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
-    "eslint-config-next": "^14.2.20",
+    "eslint-config-next": "^14.2.22",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "husky": "^9.1.7",
     "jsdom": "^25.0.1",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   }
