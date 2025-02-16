@@ -32,7 +32,6 @@ exports[`BUTTON COMPONENT > Should match snapshot of Button.Icon component 1`] =
       alt="Alt text"
       data-nimg="1"
       decoding="async"
-      fetchpriority="high"
       height="24"
       src="/_next/image?url=%2Fpath%2Fto%2Fany%2Ficon&w=48&q=75"
       srcset="/_next/image?url=%2Fpath%2Fto%2Fany%2Ficon&w=32&q=75 1x, /_next/image?url=%2Fpath%2Fto%2Fany%2Ficon&w=48&q=75 2x"

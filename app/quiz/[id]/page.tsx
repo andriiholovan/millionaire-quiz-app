@@ -9,16 +9,15 @@ import validateRouteParam from '@/app/_lib/validate-route-param';
 import styles from '@/app/quiz/[id]/page.module.css';
 
 type QuizPageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  }
+  }>
 };
 
-export default async function QuizPage({
-  params,
-}: QuizPageProps) {
+export default async function QuizPage({ params }: QuizPageProps) {
+  const { id } = await params;
   const quizList = await getQuizList();
-  const quizId = validateRouteParam(params.id, z.coerce.number());
+  const quizId = validateRouteParam(id, z.coerce.number());
   const { question, answers } = await getQuizElement(quizId);
   return (
     <main className={styles.main}>

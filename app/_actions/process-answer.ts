@@ -10,12 +10,13 @@ import { getQuizList } from '@/app/_lib/get-quiz-data';
 import validateRouteParam from '@/app/_lib/validate-route-param';
 
 export default async function processAnswer(formData: FormData) {
-  const url = headers().get('referer') as string;
+  const headersList = await headers();
+  const url = headersList.get('referer') as string;
   const step = new URL(url).pathname.split('/').at(-1);
-  const answer = formData.get('id') as string;
+  const answer = formData.get('answer') as string;
 
   if (!step || !answer) {
-    deleteCookie(STEP);
+    await deleteCookie(STEP);
     redirect('/');
   }
 
@@ -31,15 +32,15 @@ export default async function processAnswer(formData: FormData) {
   await wait(2000);
 
   if (!isCorrect) {
-    deleteCookie(STEP);
+    await deleteCookie(STEP);
     redirect(`/game-over/${prevStep}`);
   }
 
   if (isLastStep) {
-    deleteCookie(STEP);
+    await deleteCookie(STEP);
     redirect(`/game-over/${currentStep}`);
   }
 
-  setCookie(STEP, nextStep);
+  await setCookie(STEP, nextStep);
   redirect(`/quiz/${currentStep + 1}`);
 }

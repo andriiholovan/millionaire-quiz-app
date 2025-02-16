@@ -3,11 +3,12 @@
 exports[`OPTION LIST > Should match snapshot 1`] = `
 <DocumentFragment>
   <form
+    action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')"
     class="_options_group_2ab0b1"
   >
     <button
       class="_answer_2ab0b1"
-      name="id"
+      name="answer"
       type="submit"
       value="A"
     >
@@ -22,7 +23,7 @@ exports[`OPTION LIST > Should match snapshot 1`] = `
     </button>
     <button
       class="_answer_2ab0b1"
-      name="id"
+      name="answer"
       type="submit"
       value="B"
     >

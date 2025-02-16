@@ -9,16 +9,15 @@ import validateRouteParam from '@/app/_lib/validate-route-param';
 import styles from '@/app/game-over/[id]/page.module.css';
 
 type GameOverPageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  }
+  }>
 };
 
-export default async function GameOverPage({
-  params,
-}: GameOverPageProps) {
+export default async function GameOverPage({ params }: GameOverPageProps) {
+  const { id } = await params;
   const quizList = await getQuizList();
-  const quizId = validateRouteParam(params.id, z.coerce.number());
+  const quizId = validateRouteParam(id, z.coerce.number());
   const reward = quizList[quizId - 1]?.reward ?? 0;
   return (
     <main className={styles.main}>
