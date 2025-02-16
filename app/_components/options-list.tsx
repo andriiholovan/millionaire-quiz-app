@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import Form from 'next/form';
 import { useState } from 'react';
 import processAnswer from '@/app/_actions/process-answer';
 import OptionItem from '@/app/_components/option-item';
@@ -23,7 +24,7 @@ export default function OptionsList({
   };
 
   return (
-    <form action={processAnswer} className={styles.options_group}>
+    <Form action={processAnswer} className={styles.options_group}>
       {answers.map((answer) => {
         const label = getOptionLabel(answer.id);
         const isSelected = answer.id === selected;
@@ -48,6 +49,6 @@ export default function OptionsList({
           </OptionItem>
         );
       })}
-    </form>
+    </Form>
   );
 }

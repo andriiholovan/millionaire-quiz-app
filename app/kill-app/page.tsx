@@ -1,14 +1,13 @@
 import { notFound } from 'next/navigation';
 
 type ForceErrorPageProps = {
-  searchParams: {
+  searchParams: Promise<{
     force: unknown;
-  }
+  }>
 };
 
-export default function ForceErrorPage({
-  searchParams,
-}: ForceErrorPageProps) {
+export default async function ForceErrorPage(props: ForceErrorPageProps) {
+  const searchParams = await props.searchParams;
   if ('force' in searchParams) {
     throw new Error('Go ahead and check the Global error page ui');
   }

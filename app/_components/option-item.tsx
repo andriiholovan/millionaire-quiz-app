@@ -16,7 +16,7 @@ export default function OptionItem({
   const { pending } = useFormStatus();
   return (
     <button
-      name="id"
+      name="answer"
       value={id}
       className={className}
       disabled={pending}
