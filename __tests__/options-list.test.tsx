@@ -1,15 +1,10 @@
 import {
-  afterEach,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
+  afterEach, beforeEach, describe, expect, it, vi,
 } from 'vitest';
 import {
   cleanup,
   render,
-  RenderResult,
+  type RenderResult,
   screen,
 } from '@testing-library/react';
 import OptionsList from '@/app/_components/options-list';
@@ -21,6 +16,11 @@ vi.mock('react-dom', async () => {
     useFormStatus: vi.fn(() => ({ pending: false })),
   };
 });
+
+vi.mock('@/app/_actions/process-answer', () => ({
+  __esModule: true,
+  default: 'process-answer',
+}));
 
 describe('OPTION LIST', () => {
   let container: RenderResult;

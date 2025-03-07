@@ -27,6 +27,6 @@ describe('validateRouteParam helper', () => {
     const param = 'abc';
     const schema = z.number();
 
-    expect(() => validateRouteParam(param, schema)).toThrowError('NEXT_NOT_FOUND');
+    expect(() => validateRouteParam(param, schema)).toThrowError('NEXT_HTTP_ERROR_FALLBACK;404');
   });
 });

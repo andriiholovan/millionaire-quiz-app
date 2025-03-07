@@ -1,27 +1,38 @@
+'use client';
+
+import classNames from 'classnames';
+import { useState } from 'react';
 import { useFormStatus } from 'react-dom';
 
+import styles from '@/app/_components/options-list.module.css';
+
 type OptionProps = {
-  id: string;
   children: React.ReactNode;
   className: string;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  id: string;
+  isCorrect: boolean;
 };
 
 export default function OptionItem({
-  id,
-  className,
   children,
-  onClick,
+  className,
+  id,
+  isCorrect,
 }: OptionProps) {
+  const [isSelected, setSelected] = useState<boolean>(false);
   const { pending } = useFormStatus();
   return (
     <button
-      name="answer"
-      value={id}
-      className={className}
+      className={classNames(
+        className,
+        isSelected && isCorrect && styles.answer_correct,
+        isSelected && !isCorrect && styles.answer_incorrect,
+      )}
       disabled={pending}
-      onClick={onClick}
+      name="answer"
       type="submit"
+      value={id}
+      onClick={() => setSelected(true)}
     >
       {children}
     </button>
