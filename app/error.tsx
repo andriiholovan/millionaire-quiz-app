@@ -1,7 +1,6 @@
 'use client';
 
 import classNames from 'classnames';
-import { revalidatePath } from 'next/cache';
 import { useEffect } from 'react';
 import z from 'zod';
 import Button from '@/app/_components/button';
@@ -37,7 +36,6 @@ export default function Error({
           isWide
           push
           to="/"
-          onClick={() => revalidatePath('/')}
           className={classNames(styles.button, styles.start_over)}
         >
           Start over
