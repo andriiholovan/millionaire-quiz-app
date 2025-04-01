@@ -7,12 +7,12 @@ function Confetti() {
     <>
       <Fireworks
         autorun={{
-          speed: 1,
           duration: 1000,
+          speed: 1,
         }}
         decorateOptions={() => ({
-          origin: { x: 0, y: 1 },
           angle: 70,
+          origin: { x: 0, y: 1 },
           particleCount: 200,
           startVelocity: 120,
         })}

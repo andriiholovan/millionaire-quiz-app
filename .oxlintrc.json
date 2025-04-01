@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "unicorn",
+    "typescript",
+    "oxc",
+    "nextjs",
+    "jsx-a11y",
+    "jest",
+    "vitest",
+    "promise"
+  ],
+  "categories": {
+    "correctness": "error",
+    "pedantic": "error",
+    "perf": "error"
+  },
+  "ignorePatterns": [
+    "*.icon.{jsx,tsx}"
+  ],
+  "rules": {
+    "max-lines-per-function": [
+      "error",
+      {
+        "max": 50,
+        "skipBlankLines": true,
+        "skipComments": false,
+        "IIFEs": false
+      }
+    ],
+    "max-nested-callbacks": "off",
+    "max-depth": "off",
+    "no-cycle": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "allowSeparatedGroups": true
+      }
+    ]
+  }
+}

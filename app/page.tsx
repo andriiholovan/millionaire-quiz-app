@@ -1,5 +1,5 @@
 import Button from '@/app/_components/button';
-import HandIcon from '@/app/_components/hand-icon';
+import HandIcon from '@/app/_components/hand-icon.icon';
 import Heading from '@/app/_components/heading';
 import { getQuizList } from '@/app/_lib/get-quiz-data';
 

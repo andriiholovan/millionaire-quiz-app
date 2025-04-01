@@ -6,8 +6,8 @@ import {
   vi,
 } from 'vitest';
 import {
-  fireEvent,
   cleanup,
+  fireEvent,
   render,
   screen,
 } from '@testing-library/react';
