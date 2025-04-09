@@ -6,11 +6,10 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v4
-      - name: use node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '22.14.0'
-      - run: npm install
+          node-version: 22
+          cache: 'npm'
+      - run: npm ci
       - run: npm test
