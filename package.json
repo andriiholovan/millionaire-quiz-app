@@ -16,27 +16,27 @@
     "@vercel/speed-insights": "^1.2.0",
     "@vercel/toolbar": "^0.1.36",
     "classnames": "^2.5.1",
-    "next": "15.3.0",
+    "next": "15.3.1",
     "react": "19.1.0",
     "react-canvas-confetti": "^2.0.7",
     "react-dom": "19.1.0",
-    "zod": "^3.24.2"
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.0",
     "@types/node": "^22.14.1",
-    "@types/react": "19.1.1",
+    "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.4.0",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
     "lint-staged": "^15.5.1",
-    "oxlint": "^0.16.5",
+    "oxlint": "^0.16.6",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"
   },
   "overrides": {
-    "@types/react": "19.1.1",
+    "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2"
   }
 }
