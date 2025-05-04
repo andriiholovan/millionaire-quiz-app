@@ -31,7 +31,7 @@
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
     "lint-staged": "^15.5.1",
-    "oxlint": "^0.16.8",
+    "oxlint": "^0.16.9",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
   },
