@@ -3,7 +3,7 @@
 exports[`BUTTON COMPONENT > Should match snapshot of <a> element 1`] = `
 <DocumentFragment>
   <a
-    class="_button_6961ec"
+    class="_button_4d75bb"
     href="/"
   >
     Start
@@ -14,7 +14,7 @@ exports[`BUTTON COMPONENT > Should match snapshot of <a> element 1`] = `
 exports[`BUTTON COMPONENT > Should match snapshot of <button> element with default props only 1`] = `
 <DocumentFragment>
   <button
-    class="_button_6961ec"
+    class="_button_4d75bb"
     type="button"
   >
     Start
@@ -25,7 +25,7 @@ exports[`BUTTON COMPONENT > Should match snapshot of <button> element with defau
 exports[`BUTTON COMPONENT > Should match snapshot of Button.Icon component 1`] = `
 <DocumentFragment>
   <button
-    class="_button_6961ec _button_mobile_6961ec _button_align_right_6961ec"
+    class="_button_4d75bb _button_mobile_4d75bb _button_align_right_4d75bb"
     type="button"
   >
     <img
@@ -45,7 +45,7 @@ exports[`BUTTON COMPONENT > Should match snapshot of Button.Icon component 1`] =
 exports[`BUTTON COMPONENT > Should match snapshot of Button.Primary component 1`] = `
 <DocumentFragment>
   <a
-    class="_button_6961ec _button_wide_6961ec _button_primary_6961ec"
+    class="_button_4d75bb _button_wide_4d75bb _button_primary_4d75bb"
     href="/"
   >
     Start

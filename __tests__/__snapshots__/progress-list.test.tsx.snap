@@ -3,20 +3,20 @@
 exports[`PROGRESS LIST > Should match snapshot 1`] = `
 <DocumentFragment>
   <ul
-    class="_progress_group_aa8a78"
+    class="_progress_group_da84f6"
   >
     <li
-      class="_progress_aa8a78 _progress_current_aa8a78"
+      class="_progress_da84f6 _progress_current_da84f6"
     >
       500
     </li>
     <li
-      class="_progress_aa8a78 _progress_next_aa8a78"
+      class="_progress_da84f6 _progress_next_da84f6"
     >
       64,000
     </li>
     <li
-      class="_progress_aa8a78 _progress_next_aa8a78"
+      class="_progress_da84f6 _progress_next_da84f6"
     >
       1,000,000
     </li>
