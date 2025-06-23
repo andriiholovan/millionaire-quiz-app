@@ -4,34 +4,34 @@ exports[`OPTION LIST > Should match snapshot 1`] = `
 <DocumentFragment>
   <form
     action="process-answer"
-    class="_options_group_2ab0b1"
+    class="_options_group_d5afd4"
   >
     <button
-      class="_answer_2ab0b1"
+      class="_answer_d5afd4"
       name="answer"
       type="submit"
       value="A"
     >
       <span
-        class="_answer_label_2ab0b1"
+        class="_answer_label_d5afd4"
       />
       <span
-        class="_answer_title_2ab0b1"
+        class="_answer_title_d5afd4"
       >
         option 1
       </span>
     </button>
     <button
-      class="_answer_2ab0b1"
+      class="_answer_d5afd4"
       name="answer"
       type="submit"
       value="B"
     >
       <span
-        class="_answer_label_2ab0b1"
+        class="_answer_label_d5afd4"
       />
       <span
-        class="_answer_title_2ab0b1"
+        class="_answer_title_d5afd4"
       >
         option 2
       </span>
