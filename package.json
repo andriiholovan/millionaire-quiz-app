@@ -16,7 +16,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "@vercel/toolbar": "^0.1.41",
     "classnames": "^2.5.1",
-    "next": "15.5.3",
+    "next": "15.5.4",
     "react": "19.1.1",
     "react-canvas-confetti": "^2.0.7",
     "react-dom": "19.1.1",
@@ -31,7 +31,7 @@
     "husky": "^9.1.7",
     "jsdom": "^27.0.0",
     "lint-staged": "^16.2.0",
-    "oxlint": "^1.16.0",
+    "oxlint": "^1.17.0",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
