@@ -12,16 +12,17 @@ export const QuizListSchema = z.array(
     })),
   }),
 )
-  // mutate data to make sure that the list is sorted by list.step property
+  // mutate the data to make sure the list is sorted by the list.step property
   .transform((schema) => schema.sort((a, b) => a.step - b.step))
-  // as the list is sorted now, lets check that the list is a sequence by list.step property
-  // Btw, we are checking only the last element to simplify the process
+  // check that the list is a sequence by list.step property
+  // btw, checking on the last element to simplify the process
   .refine(
-    (schema) => schema[schema.length - 1].step === schema.length,
-    (schema) => ({
-      message: `Property step should be unique integer in interval [1, ${schema.length}]`,
-      path: ['Array[\'step\']'],
-    }),
+    (schema) => schema.at(-1)?.step === schema.length,
+    {
+      error: (schema) => ({
+        message: `Property "step" should be unique integer in interval [1, ${schema.length}]`,
+        path: ['Array[\'step\']'],
+    })}
   );
 
 export type QuizList = z.infer<typeof QuizListSchema>;
