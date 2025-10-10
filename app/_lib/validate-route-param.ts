@@ -5,7 +5,7 @@ export default function validateRouteParam<Input, Output>(
   param: Input,
   schema: z.Schema<Output>,
   onErrorCallback: () => never = notFound,
-): z.SafeParseSuccess<Output>['data'] {
+): z.ZodSafeParseSuccess<Output>['data'] | never {
   const { error, data } = schema.safeParse(param);
   if (error) {
     onErrorCallback();
