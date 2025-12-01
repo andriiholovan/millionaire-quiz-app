@@ -16,7 +16,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "@vercel/toolbar": "^0.1.41",
     "classnames": "^2.5.1",
-    "next": "16.0.4",
+    "next": "16.0.6",
     "react": "19.2.0",
     "react-canvas-confetti": "^2.0.7",
     "react-dom": "19.2.0",
@@ -33,7 +33,7 @@
     "lint-staged": "^16.2.7",
     "oxlint": "^1.30.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.13"
+    "vitest": "^4.0.14"
   },
   "overrides": {
     "@types/react": "19.2.7",
