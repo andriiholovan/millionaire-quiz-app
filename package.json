@@ -6,8 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint --tsconfig=tsconfig.json",
-    "lint:fix": "npm run lint --fix --fix-suggestions --fix-dangerously --deny-warnings",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously --deny-warnings",
     "prepare": "husky",
     "test": "vitest run",
     "test:watch": "vitest"

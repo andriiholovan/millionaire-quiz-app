@@ -1,9 +1,0 @@
-.next
-public
-node_modules
-yarn.lock
-package-lock.json
-coverage
-.idea
-.zed
-vitest.config.mts

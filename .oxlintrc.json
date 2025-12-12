@@ -13,10 +13,14 @@
   ],
   "categories": {
     "correctness": "error",
+    "suspicious": "error",
     "pedantic": "error",
     "perf": "error"
   },
   "ignorePatterns": [
+    "package-lock.json",
+    "public",
+    "vitest.config.mts",
     "*.icon.{jsx,tsx}"
   ],
   "rules": {
@@ -29,9 +33,8 @@
         "IIFEs": false
       }
     ],
-    "max-nested-callbacks": "off",
-    "max-depth": "off",
     "no-cycle": "error",
+    "react/react-in-jsx-scope": "off",
     "sort-imports": [
       "error",
       {
