@@ -24,15 +24,7 @@
     "*.icon.{jsx,tsx}"
   ],
   "rules": {
-    "max-lines-per-function": [
-      "error",
-      {
-        "max": 50,
-        "skipBlankLines": true,
-        "skipComments": false,
-        "IIFEs": false
-      }
-    ],
+    "eslint/no-inline-comments": "off",
     "no-cycle": "error",
     "react/react-in-jsx-scope": "off",
     "sort-imports": [
@@ -43,5 +35,13 @@
         "allowSeparatedGroups": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.{ts,tsx}"],
+      "rules": {
+        "max-lines-per-function": "off"
+      }
+    }
+  ]
 }

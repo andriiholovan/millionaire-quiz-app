@@ -1,8 +1,8 @@
-import Button from '@/app/_components/button';
-import HandIcon from '@/app/_components/hand-icon.icon';
-import Heading from '@/app/_components/heading';
+import Button from '@/app/_components/button'
+import HandIcon from '@/app/_components/hand-icon.icon'
+import Heading from '@/app/_components/heading'
 
-import styles from '@/app/not-found.module.css';
+import styles from '@/app/not-found.module.css'
 
 export default function NotFound() {
   return (
@@ -14,13 +14,11 @@ export default function NotFound() {
         <Heading as="h2" className={styles.heading}>
           Not Found
         </Heading>
-        <p className={styles.description}>
-          Could not find requested resource
-        </p>
+        <p className={styles.description}>Could not find requested resource</p>
         <Button.Primary push to="/">
           Return Home
         </Button.Primary>
       </div>
     </main>
-  );
+  )
 }

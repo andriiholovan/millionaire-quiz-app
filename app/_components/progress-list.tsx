@@ -1,17 +1,14 @@
-import classNames from 'classnames';
-import { QuizElement } from '@/app/_lib/schema';
+import classNames from 'classnames'
+import { QuizElement } from '@/app/_lib/schema'
 
-import styles from '@/app/_components/progress-list.module.css';
+import styles from '@/app/_components/progress-list.module.css'
 
 type ProgressListProps = {
-  id: number;
-  quizList: Pick<QuizElement, 'reward' | 'step'>[];
-};
+  id: number
+  quizList: Pick<QuizElement, 'reward' | 'step'>[]
+}
 
-export default function ProgressList({
-  id,
-  quizList,
-}: ProgressListProps) {
+export default function ProgressList({ id, quizList }: ProgressListProps) {
   return (
     <ul className={styles.progress_group}>
       {quizList.map((quiz) => (
@@ -28,5 +25,5 @@ export default function ProgressList({
         </li>
       ))}
     </ul>
-  );
+  )
 }

@@ -1,36 +1,36 @@
 :root {
-  --orange-dark: #E87928;
-  --orange-bright: #FF8B37;
-  --orange-midlight: #FFAC70;
-  --orange-light: #FFF3EB;
-  --green-bright: #47D867;
-  --green-light: #E6FAEA;
-  --red-bright: #EC6259;
-  --red-light: #FDEEED;
-  --grey-dark: #1C1C21;
-  --grey-midlight: #D0D0D8;
-  --grey-light: #F5F5F7;
-  --white: #FFFFFF;
+  --orange-dark: #e87928;
+  --orange-bright: #ff8b37;
+  --orange-midlight: #ffac70;
+  --orange-light: #fff3eb;
+  --green-bright: #47d867;
+  --green-light: #e6faea;
+  --red-bright: #ec6259;
+  --red-light: #fdeeed;
+  --grey-dark: #1c1c21;
+  --grey-midlight: #d0d0d8;
+  --grey-light: #f5f5f7;
+  --white: #ffffff;
 
   /* mobile assets */
-  --option-background-correct: url("../../public/mobile_option_correct.svg");
-  --option-background-hover: url("../../public/mobile_option_hover.svg");
-  --option-background-inactive: url("../../public/mobile_option_inactive.svg");
-  --option-background-incorrect: url("../../public/mobile_option_incorrect.svg");
-  --option-background-selected: url("../../public/mobile_option_selected.svg");
-  --progress-active: url("../../public/mobile_progress_active.svg");
-  --progress-inactive: url("../../public/mobile_progress_inactive.svg");
+  --option-background-correct: url('../../public/mobile_option_correct.svg');
+  --option-background-hover: url('../../public/mobile_option_hover.svg');
+  --option-background-inactive: url('../../public/mobile_option_inactive.svg');
+  --option-background-incorrect: url('../../public/mobile_option_incorrect.svg');
+  --option-background-selected: url('../../public/mobile_option_selected.svg');
+  --progress-active: url('../../public/mobile_progress_active.svg');
+  --progress-inactive: url('../../public/mobile_progress_inactive.svg');
   /* mobile assets */
 
   @media (min-width: 1440px) {
     /* desktop assets */
-    --option-background-correct: url("../../public/desktop_option_correct.svg");
-    --option-background-hover: url("../../public/desktop_option_hover.svg");
-    --option-background-inactive: url("../../public/desktop_option_inactive.svg");
-    --option-background-incorrect: url("../../public/desktop_option_incorrect.svg");
-    --option-background-selected: url("../../public/desktop_option_selected.svg");
-    --progress-active: url("../../public/desktop_progress_active.svg");
-    --progress-inactive: url("../../public/desktop_progress_inactive.svg");
+    --option-background-correct: url('../../public/desktop_option_correct.svg');
+    --option-background-hover: url('../../public/desktop_option_hover.svg');
+    --option-background-inactive: url('../../public/desktop_option_inactive.svg');
+    --option-background-incorrect: url('../../public/desktop_option_incorrect.svg');
+    --option-background-selected: url('../../public/desktop_option_selected.svg');
+    --progress-active: url('../../public/desktop_progress_active.svg');
+    --progress-inactive: url('../../public/desktop_progress_inactive.svg');
     /* desktop assets */
   }
 }

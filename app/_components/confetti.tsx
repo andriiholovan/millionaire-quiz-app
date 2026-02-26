@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import Fireworks from 'react-canvas-confetti/dist/presets/fireworks';
+import Fireworks from 'react-canvas-confetti/dist/presets/fireworks'
 
 function Confetti() {
   return (
@@ -31,7 +31,7 @@ function Confetti() {
         })}
       />
     </>
-  );
+  )
 }
 
-export default Confetti;
+export default Confetti

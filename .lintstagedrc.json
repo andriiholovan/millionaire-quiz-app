@@ -1,3 +1,6 @@
 {
-  "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}": "npm run lint:fix"
+  "**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}": [
+    "npm run lint:fix",
+    "npm run format:fix"
+  ]
 }

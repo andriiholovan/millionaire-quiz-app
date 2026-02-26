@@ -78,5 +78,5 @@ export default function HandIcon() {
         fill="#FFD62A"
       />
     </svg>
-  );
+  )
 }

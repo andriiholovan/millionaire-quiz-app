@@ -6,6 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "format:check": "oxfmt --check",
+    "format:fix": "oxfmt",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously --deny-warnings",
     "prepare": "husky",
@@ -31,6 +33,7 @@
     "husky": "^9.1.7",
     "jsdom": "^27.4.0",
     "lint-staged": "^16.2.7",
+    "oxfmt": "^0.35.0",
     "oxlint": "^1.49.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"

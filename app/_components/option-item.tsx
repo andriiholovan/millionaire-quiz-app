@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import classNames from 'classnames';
-import { useState } from 'react';
-import { useFormStatus } from 'react-dom';
+import classNames from 'classnames'
+import { useState } from 'react'
+import { useFormStatus } from 'react-dom'
 
-import styles from '@/app/_components/options-list.module.css';
+import styles from '@/app/_components/options-list.module.css'
 
 type OptionProps = {
-  children: React.ReactNode;
-  className: string;
-  id: string;
-  isCorrect: boolean;
-};
+  children: React.ReactNode
+  className: string
+  id: string
+  isCorrect: boolean
+}
 
 export default function OptionItem({
   children,
@@ -19,8 +19,8 @@ export default function OptionItem({
   id,
   isCorrect,
 }: OptionProps) {
-  const [isSelected, setSelected] = useState<boolean>(false);
-  const { pending } = useFormStatus();
+  const [isSelected, setSelected] = useState<boolean>(false)
+  const { pending } = useFormStatus()
   return (
     <button
       className={classNames(
@@ -36,5 +36,5 @@ export default function OptionItem({
     >
       {children}
     </button>
-  );
+  )
 }

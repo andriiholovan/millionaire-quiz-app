@@ -1,18 +1,18 @@
-import classNames from 'classnames';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import Image from 'next/image';
-import Link from 'next/link';
+import classNames from 'classnames'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import styles from '@/app/_components/button.module.css';
+import styles from '@/app/_components/button.module.css'
 
 type ButtonProps = {
-  children: React.ReactNode;
-  className?: string;
-  isWide?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
-  push?: boolean;
-  to?: string;
-};
+  children: React.ReactNode
+  className?: string
+  isWide?: boolean
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
+  push?: boolean
+  to?: string
+}
 
 export default function Button({
   children,
@@ -26,27 +26,16 @@ export default function Button({
     styles.button,
     isWide && styles.button_wide,
     className,
-  );
-  return (
-    push ? (
-      <Link
-        prefetch
-        className={commonClassNames}
-        href={to}
-        onClick={onClick}
-      >
-        {children}
-      </Link>
-    ) : (
-      <button
-        className={commonClassNames}
-        onClick={onClick}
-        type="button"
-      >
-        {children}
-      </button>
-    )
-  );
+  )
+  return push ? (
+    <Link prefetch className={commonClassNames} href={to} onClick={onClick}>
+      {children}
+    </Link>
+  ) : (
+    <button className={commonClassNames} onClick={onClick} type="button">
+      {children}
+    </button>
+  )
 }
 
 export function ButtonPrimary({
@@ -67,17 +56,17 @@ export function ButtonPrimary({
     >
       {children}
     </Button>
-  );
+  )
 }
 
-Button.Primary = ButtonPrimary;
+Button.Primary = ButtonPrimary
 
 type ButtonIconProps = {
-  iconAlt: string;
-  isMobile?: boolean;
-  isRightAligned?: boolean;
-  src: string | StaticImport;
-};
+  iconAlt: string
+  isMobile?: boolean
+  isRightAligned?: boolean
+  src: string | StaticImport
+}
 
 export function ButtonIcon({
   className,
@@ -100,15 +89,9 @@ export function ButtonIcon({
       push={push}
       to={to}
     >
-      <Image
-        priority
-        src={src}
-        alt={iconAlt}
-        height={24}
-        width={24}
-      />
+      <Image priority src={src} alt={iconAlt} height={24} width={24} />
     </Button>
-  );
+  )
 }
 
-Button.Icon = ButtonIcon;
+Button.Icon = ButtonIcon

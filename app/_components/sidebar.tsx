@@ -1,25 +1,23 @@
-'use client';
+'use client'
 
-import classNames from 'classnames';
-import { useState } from 'react';
-import Button from '@/app/_components/button';
-import BurgerIcon from '@/public/burger.svg';
-import CrossIcon from '@/public/cross.svg';
+import classNames from 'classnames'
+import { useState } from 'react'
+import Button from '@/app/_components/button'
+import BurgerIcon from '@/public/burger.svg'
+import CrossIcon from '@/public/cross.svg'
 
-import styles from '@/app/_components/sidebar.module.css';
+import styles from '@/app/_components/sidebar.module.css'
 
 type SidebarProps = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
-export default function Sidebar({
-  children,
-}: SidebarProps) {
-  const [isOpen, setOpen] = useState(false);
+export default function Sidebar({ children }: SidebarProps) {
+  const [isOpen, setOpen] = useState(false)
 
   const toggleSidebar = () => {
-    setOpen(!isOpen);
-  };
+    setOpen(!isOpen)
+  }
 
   return (
     <>
@@ -30,11 +28,12 @@ export default function Sidebar({
           src={BurgerIcon}
         />
       </nav>
-      <aside className={classNames(
-        styles.container,
-        isOpen && styles.container_is_open,
-        !isOpen && styles.container_is_closed,
-      )}
+      <aside
+        className={classNames(
+          styles.container,
+          isOpen && styles.container_is_open,
+          !isOpen && styles.container_is_closed,
+        )}
       >
         <Button.Icon
           iconAlt="Close button"
@@ -44,5 +43,5 @@ export default function Sidebar({
         {children}
       </aside>
     </>
-  );
+  )
 }

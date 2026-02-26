@@ -1,4 +1,5 @@
 # Millionaire Game Quiz [[live_application]](https://millionaire-app-quiz.vercel.app/) ![Test workflow](https://github.com/andriiholovan/millionaire-quiz-app/actions/workflows/test.yml/badge.svg)
+
 [![Main screen of the application](main_screen.png)](https://millionaire-app-quiz.vercel.app/)
 
 ## Description
@@ -10,6 +11,7 @@ The application includes custom [not-found](https://millionaire-app-quiz.vercel.
 Also, pre-commit,~~pre-push~~ hooks are present (pre-push moved to [`test.yml`](https://github.com/andriiholovan/millionaire-quiz-app/blob/main/.github/workflows/test.yml) GitHub CI workflow).
 
 ## Roadmap
+
 - [x] Add @vercel/speed-insights and optimize app Core Web Vitals.
 - [x] Add @vercel/toolbar and optimize app accessibility.
 - [ ] [WIP] Authorization to save user's progress in PostgresDB.
