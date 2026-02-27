@@ -1,5 +1,17 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "sortImports": {
+    "newlinesBetween": false,
+    "groups": [
+      "value-external",
+      "import",
+      { "newlinesBetween": true },
+      "value-style"
+    ]
+  },
+  "sortPackageJson": {
+    "sortScripts": true
+  }
 }

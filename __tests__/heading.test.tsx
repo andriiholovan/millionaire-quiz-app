@@ -1,5 +1,5 @@
-import { afterEach, describe, expect, it } from 'vitest'
 import { cleanup, render } from '@testing-library/react'
+import { afterEach, describe, expect, it } from 'vitest'
 import Heading from '@/app/_components/heading'
 
 describe('HEADING COMPONENT', () => {

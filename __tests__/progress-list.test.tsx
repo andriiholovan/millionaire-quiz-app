@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { cleanup, render, RenderResult, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import ProgressList from '@/app/_components/progress-list'
 
 describe('PROGRESS LIST', () => {

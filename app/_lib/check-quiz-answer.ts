@@ -1,5 +1,5 @@
-import { AnswerElement } from '@/app/_lib/schema'
 import { getQuizElement } from '@/app/_lib/get-quiz-data'
+import { AnswerElement } from '@/app/_lib/schema'
 
 export default async function checkQuizAnswer(
   step: number,

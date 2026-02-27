@@ -1,10 +1,10 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   cleanup,
   render,
   type RenderResult,
   screen,
 } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import OptionsList from '@/app/_components/options-list'
 
 vi.mock('react-dom', async () => {
