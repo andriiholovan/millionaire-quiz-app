@@ -5,6 +5,7 @@ import ProgressList from '@/app/_components/progress-list'
 import Sidebar from '@/app/_components/sidebar'
 import { getQuizElement, getQuizList } from '@/app/_lib/get-quiz-data'
 import validateRouteParam from '@/app/_lib/validate-route-param'
+import type { Metadata } from 'next'
 
 import styles from '@/app/quiz/[id]/page.module.css'
 
@@ -12,6 +13,15 @@ type QuizPageProps = {
   params: Promise<{
     id: string
   }>
+}
+
+export async function generateMetadata({
+  params,
+}: QuizPageProps): Promise<Metadata> {
+  const { id } = await params
+  return {
+    title: `Question ${id} | Who wants to be a millionaire?`,
+  }
 }
 
 export default async function QuizPage({ params }: QuizPageProps) {

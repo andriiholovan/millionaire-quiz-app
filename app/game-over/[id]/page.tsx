@@ -5,6 +5,7 @@ import HandIcon from '@/app/_components/hand-icon.icon'
 import Heading from '@/app/_components/heading'
 import { getQuizList } from '@/app/_lib/get-quiz-data'
 import validateRouteParam from '@/app/_lib/validate-route-param'
+import type { Metadata } from 'next'
 
 import styles from '@/app/game-over/[id]/page.module.css'
 
@@ -12,6 +13,17 @@ type GameOverPageProps = {
   params: Promise<{
     id: string
   }>
+}
+
+export async function generateMetadata({
+  params,
+}: GameOverPageProps): Promise<Metadata> {
+  const { id } = await params
+  const quizId = validateRouteParam(id, z.coerce.number())
+  return {
+    title: quizId === 12 ? 'Congratulations!' : 'Game Over',
+    description: `You earned $1000000 (no, you didn't)`,
+  }
 }
 
 export default async function GameOverPage({ params }: GameOverPageProps) {

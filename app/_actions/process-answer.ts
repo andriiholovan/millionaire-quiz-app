@@ -11,9 +11,10 @@ import validateRouteParam from '@/app/_lib/validate-route-param'
 
 export default async function processAnswer(formData: FormData) {
   const headersList = await headers()
-  const url = headersList.get('referer') as string
-  const step = new URL(url).pathname.split('/').at(-1)
+  const referer = headersList.get('referer') as string
+  const step = new URL(referer).pathname.split('/').at(-1)
   const answer = formData.get('answer') as string
+  throw Error
 
   if (!step || !answer) {
     await deleteCookie(STEP)

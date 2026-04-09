@@ -1,8 +1,13 @@
 import Button from '@/app/_components/button'
 import HandIcon from '@/app/_components/hand-icon.icon'
 import Heading from '@/app/_components/heading'
+import type { Metadata } from 'next'
 
 import styles from '@/app/not-found.module.css'
+
+export const metadata: Metadata = {
+  title: 'Not Found',
+}
 
 export default function NotFound() {
   return (
