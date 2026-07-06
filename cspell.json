@@ -1,0 +1,6 @@
+{
+  "ignorePaths": ["node_modules/**", "package-lock.json"],
+  "language": "en",
+  "version": "0.2",
+  "words": ["autorun", "classnames", "listitem", "oxlint", "vercel", "vitest"]
+}
