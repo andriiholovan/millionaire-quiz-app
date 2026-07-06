@@ -1,9 +1,7 @@
-import Button from '@/app/_components/button'
-import HandIcon from '@/app/_components/hand-icon.icon'
-import Heading from '@/app/_components/heading'
-import { getQuizList } from '@/app/_lib/get-quiz-data'
+import { Button, HandIcon, Heading } from '@components'
+import { getQuizList } from '@lib/server'
 
-import styles from '@/app/page.module.css'
+import styles from './page.module.css'
 
 export default async function Home() {
   const [firstQuizOption] = await getQuizList()

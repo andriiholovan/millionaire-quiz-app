@@ -1,11 +1,11 @@
 'use client'
 
-import classNames from 'classnames'
+import { Button } from '@components'
+import cn from 'classnames'
 import { useEffect } from 'react'
 import z from 'zod'
-import Button from '@/app/_components/button'
 
-import styles from '@/app/error.module.css'
+import styles from './error.module.css'
 
 export default function Error({
   error,
@@ -24,7 +24,7 @@ export default function Error({
       <div className={styles.button_group}>
         <Button
           isWide
-          className={classNames(styles.button, styles.try_again)}
+          className={cn(styles.button, styles.try_again)}
           onClick={() => reset()}
         >
           Try again
@@ -33,7 +33,7 @@ export default function Error({
           isWide
           push
           to="/"
-          className={classNames(styles.button, styles.start_over)}
+          className={cn(styles.button, styles.start_over)}
         >
           Start over
         </Button>

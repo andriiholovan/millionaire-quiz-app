@@ -1,15 +1,19 @@
 'use server'
 
+import {
+  checkQuizAnswer,
+  deleteCookie,
+  getQuizList,
+  setCookie,
+  STEP,
+  validateRouteParam,
+} from '@lib/server'
 import { wait } from 'next/dist/lib/wait'
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import z from 'zod'
-import checkQuizAnswer from '@/app/_lib/check-quiz-answer'
-import { deleteCookie, setCookie, STEP } from '@/app/_lib/cookies'
-import { getQuizList } from '@/app/_lib/get-quiz-data'
-import validateRouteParam from '@/app/_lib/validate-route-param'
 
-export default async function processAnswer(formData: FormData) {
+export async function processAnswer(formData: FormData) {
   const headersList = await headers()
   const referer = headersList.get('referer') as string
   const step = new URL(referer).pathname.split('/').at(-1)

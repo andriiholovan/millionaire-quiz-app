@@ -34,7 +34,8 @@
         "ignoreDeclarationSort": true,
         "allowSeparatedGroups": true
       }
-    ]
+    ],
+    "vitest/require-mock-type-parameters": "off"
   },
   "overrides": [
     {

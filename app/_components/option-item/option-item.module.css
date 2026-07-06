@@ -1,0 +1,25 @@
+@keyframes correct {
+  from {
+    background: var(--option-background-inactive);
+  }
+  to {
+    background: var(--option-background-correct);
+  }
+}
+
+@keyframes incorrect {
+  from {
+    background: var(--option-background-inactive);
+  }
+  to {
+    background: var(--option-background-incorrect);
+  }
+}
+
+.answer_correct {
+  animation: 0.8s correct 0.8s infinite;
+}
+
+.answer_incorrect {
+  animation: 0.8s incorrect 0.8s infinite;
+}

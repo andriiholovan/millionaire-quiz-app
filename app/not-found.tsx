@@ -1,9 +1,7 @@
-import Button from '@/app/_components/button'
-import HandIcon from '@/app/_components/hand-icon.icon'
-import Heading from '@/app/_components/heading'
+import { Button, HandIcon, Heading } from '@components'
 import type { Metadata } from 'next'
 
-import styles from '@/app/not-found.module.css'
+import styles from './not-found.module.css'
 
 export const metadata: Metadata = {
   title: 'Not Found',

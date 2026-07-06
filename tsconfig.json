@@ -19,7 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@actions": ["./app/_actions"],
+      "@components": ["./app/_components"],
+      "@lib/client": ["./app/_lib/client"],
+      "@lib/server": ["./app/_lib/server"],
+      "@lib/shared": ["./app/_lib/shared"]
     }
   },
   "include": [

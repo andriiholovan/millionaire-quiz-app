@@ -1,13 +1,9 @@
+import { Heading, OptionList, ProgressList, Sidebar } from '@components'
+import { getQuizElement, getQuizList, validateRouteParam } from '@lib/server'
 import z from 'zod'
-import Heading from '@/app/_components/heading'
-import OptionsList from '@/app/_components/options-list'
-import ProgressList from '@/app/_components/progress-list'
-import Sidebar from '@/app/_components/sidebar'
-import { getQuizElement, getQuizList } from '@/app/_lib/get-quiz-data'
-import validateRouteParam from '@/app/_lib/validate-route-param'
 import type { Metadata } from 'next'
 
-import styles from '@/app/quiz/[id]/page.module.css'
+import styles from './page.module.css'
 
 type QuizPageProps = {
   params: Promise<{
@@ -35,7 +31,7 @@ export default async function QuizPage({ params }: QuizPageProps) {
         <Heading as="h2" className={styles.heading}>
           {question}
         </Heading>
-        <OptionsList answers={answers} />
+        <OptionList answers={answers} />
       </section>
       <Sidebar>
         <ProgressList id={quizId} quizList={quizList} />

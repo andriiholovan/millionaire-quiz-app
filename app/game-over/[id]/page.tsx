@@ -1,13 +1,9 @@
+import { Button, Confetti, HandIcon, Heading } from '@components'
+import { getQuizList, validateRouteParam } from '@lib/server'
 import z from 'zod'
-import Button from '@/app/_components/button'
-import Confetti from '@/app/_components/confetti'
-import HandIcon from '@/app/_components/hand-icon.icon'
-import Heading from '@/app/_components/heading'
-import { getQuizList } from '@/app/_lib/get-quiz-data'
-import validateRouteParam from '@/app/_lib/validate-route-param'
 import type { Metadata } from 'next'
 
-import styles from '@/app/game-over/[id]/page.module.css'
+import styles from './page.module.css'
 
 type GameOverPageProps = {
   params: Promise<{

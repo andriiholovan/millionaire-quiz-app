@@ -1,5 +1,5 @@
+import { STEP } from '@lib/server'
 import { NextRequest, NextResponse } from 'next/server'
-import { STEP } from '@/app/_lib/cookies'
 
 export function proxy(request: NextRequest) {
   const stepFromCookie = request.cookies.get(STEP)?.value
