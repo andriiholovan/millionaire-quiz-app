@@ -8,7 +8,7 @@
     "format:check": "oxfmt --check",
     "format:fix": "oxfmt",
     "lint": "oxlint",
-    "lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously --deny-warnings",
+    "lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously --deny-warnings --no-error-on-unmatched-pattern",
     "prepare": "husky",
     "start": "next start",
     "test": "vitest run",
