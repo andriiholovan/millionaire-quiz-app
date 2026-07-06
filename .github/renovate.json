@@ -10,7 +10,8 @@
     ":disablePeerDependencies",
     ":maintainLockFilesMonthly",
     ":semanticCommits",
-    ":semanticCommitTypeAll(chore)"
+    ":semanticCommitTypeAll(chore)",
+    "security:minimumReleaseAgeNpm"
   ],
   "ignorePresets": [":ignoreModulesAndTests"],
   "labels": ["dependencies"],
