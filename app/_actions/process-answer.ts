@@ -8,10 +8,13 @@ import {
   STEP,
   validateRouteParam,
 } from '@lib/server'
-import { wait } from 'next/dist/lib/wait'
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import z from 'zod'
+
+// Local helper instead of importing from `next/dist/...`, which is a private
+// internal path with no stability guarantee across Next.js releases.
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export async function processAnswer(formData: FormData) {
   const headersList = await headers()

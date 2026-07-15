@@ -1,6 +1,13 @@
 'use client'
 
-import Fireworks from 'react-canvas-confetti/dist/presets/fireworks'
+import dynamic from 'next/dynamic'
+
+// Lazily load the confetti library so its bundle is only fetched when the
+// component actually renders (i.e. on a win), keeping it out of the initial JS.
+const Fireworks = dynamic(
+  () => import('react-canvas-confetti/dist/presets/fireworks'),
+  { ssr: false },
+)
 
 export function Confetti() {
   return (
