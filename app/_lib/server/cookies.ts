@@ -8,6 +8,9 @@ export async function setCookie(key: string, value: number): Promise<void> {
   cookieStore.set(key, JSON.stringify(value), {
     expires: Date.now() + ONE_HOUR,
     httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    path: '/',
   })
 }
 
