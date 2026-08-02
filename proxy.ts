@@ -3,7 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export function proxy(request: NextRequest) {
   const stepFromCookie = request.cookies.get(STEP)?.value
-  const stepFromUrl = request.url.split('/').at(-1)
+  // Use the parsed pathname so query strings / trailing slashes don't corrupt
+  // the extracted step (e.g. `/quiz/3?x=1` -> `3`, not `3?x=1`).
+  const stepFromUrl = request.nextUrl.pathname.split('/').at(-1)
 
   if (stepFromUrl === '1') {
     return NextResponse.next()
