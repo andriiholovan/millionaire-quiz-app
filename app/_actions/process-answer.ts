@@ -1,14 +1,16 @@
 'use server'
 
 import {
+  advanceSession,
   checkQuizAnswer,
-  deleteCookie,
+  clearSessionCookie,
+  createSession,
+  endSession,
+  getActiveSession,
   getQuizList,
-  setCookie,
-  STEP,
   validateRouteParam,
 } from '@lib/server'
-import { cookies, headers } from 'next/headers'
+import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import z from 'zod'
 
@@ -38,19 +40,25 @@ export async function processAnswer(formData: FormData) {
   const answer = formData.get('answer') as string
 
   if (!step || !answer) {
-    await deleteCookie(STEP)
+    await clearSessionCookie()
     redirect('/')
   }
 
   const currentStep = validateRouteParam(step, z.coerce.number())
 
-  // Authorize the submitted step against the trusted httpOnly cookie (the
-  // source of truth the proxy also enforces), so a spoofed referer cannot
-  // process an answer for an arbitrary step. Step 1 has no cookie yet.
-  const cookieStep = (await cookies()).get(STEP)?.value
-  if (currentStep !== 1 && String(currentStep) !== cookieStep) {
-    await deleteCookie(STEP)
-    redirect('/')
+  // For step 1, there is no active session yet — create one now.
+  // For all subsequent steps, look up the existing session and verify the
+  // submitted step matches the DB-authoritative current_step.
+  let sessionId: string
+  if (currentStep === 1) {
+    sessionId = await createSession()
+  } else {
+    const session = await getActiveSession()
+    if (!session || session.currentStep !== currentStep) {
+      await clearSessionCookie()
+      redirect('/')
+    }
+    sessionId = session.sessionId
   }
 
   const prevStep = currentStep - 1
@@ -60,19 +68,19 @@ export async function processAnswer(formData: FormData) {
   const isLastStep = currentStep === lastQuizStep
   const isCorrect = await checkQuizAnswer(currentStep, answer)
 
-  // delay the immediate transition to create some magic with animations
+  // Delay the immediate transition to create some magic with animations.
   await wait(2000)
 
   if (!isCorrect) {
-    await deleteCookie(STEP)
+    await endSession(sessionId, 'lost')
     redirect(`/game-over/${prevStep}`)
   }
 
   if (isLastStep) {
-    await deleteCookie(STEP)
+    await endSession(sessionId, 'won')
     redirect(`/game-over/${currentStep}`)
   }
 
-  await setCookie(STEP, nextStep)
-  redirect(`/quiz/${currentStep + 1}`)
+  await advanceSession(sessionId, nextStep)
+  redirect(`/quiz/${nextStep}`)
 }

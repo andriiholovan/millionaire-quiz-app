@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
+      "@/lib/*": ["./lib/*"],
       "@actions": ["./app/_actions"],
       "@components": ["./app/_components"],
       "@lib/client": ["./app/_lib/client"],

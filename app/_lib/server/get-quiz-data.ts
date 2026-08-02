@@ -1,34 +1,52 @@
+import { asc, eq } from 'drizzle-orm'
 import { notFound } from 'next/navigation'
 import { cache } from 'react'
-import { QuizElement, QuizList, QuizListSchema } from '../shared'
+import { QuizElement, QuizList } from '../shared'
+import { db } from '@/lib/db'
+import { quizAnswers, quizQuestions } from '@/lib/db/schema'
 
-const { QUIZ_DATA_URL = 'https://api.npoint.io/b7bd9c92c028169450f0' } =
-  process.env
-
-// `cache()` dedupes calls within a single request so the multiple callers
-// (page, generateMetadata, server action) share one fetch. The `next.revalidate`
-// + `tags` options cache the static quiz data across requests (revalidate via
-// `revalidateTag('quiz', 'max')` if the source data ever changes).
+// `cache()` deduplicates calls within a single request — pages, generateMetadata,
+// and server actions all share one round-trip to the DB per request.
 export const getQuizList = cache(async (): Promise<QuizList> => {
-  const res = await fetch(QUIZ_DATA_URL, {
-    next: { revalidate: 3600, tags: ['quiz'] },
-  })
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch quiz data: ${res.status} ${res.statusText}`,
-    )
-  }
-  const data = await res.json()
-  const parsedData = QuizListSchema.safeParse(data)
-  if (parsedData.error) {
-    throw parsedData.error
-  }
-  return parsedData.data
+  const questions = await db
+    .select()
+    .from(quizQuestions)
+    .orderBy(asc(quizQuestions.step))
+
+  const answers = await db.select().from(quizAnswers)
+
+  return questions.map((q) => ({
+    step: q.step,
+    question: q.question,
+    reward: q.reward,
+    answers: answers
+      .filter((a) => a.questionId === q.id)
+      .map((a) => ({ id: a.answerId, title: a.title, isCorrect: a.isCorrect })),
+  }))
 })
 
 export async function getQuizElement(id: number): Promise<QuizElement> {
-  const list = await getQuizList()
-  const element = list.find((item) => item.step === Number(id))
-  if (!element) notFound()
-  return element
+  const [question] = await db
+    .select()
+    .from(quizQuestions)
+    .where(eq(quizQuestions.step, id))
+    .limit(1)
+
+  if (!question) notFound()
+
+  const answers = await db
+    .select()
+    .from(quizAnswers)
+    .where(eq(quizAnswers.questionId, question.id))
+
+  return {
+    step: question.step,
+    question: question.question,
+    reward: question.reward,
+    answers: answers.map((a) => ({
+      id: a.answerId,
+      title: a.title,
+      isCorrect: a.isCorrect,
+    })),
+  }
 }
