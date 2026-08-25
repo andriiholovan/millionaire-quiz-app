@@ -9,7 +9,8 @@
     "jsx-a11y",
     "jest",
     "vitest",
-    "promise"
+    "promise",
+    "import"
   ],
   "categories": {
     "correctness": "error",
@@ -25,14 +26,33 @@
   ],
   "rules": {
     "eslint/no-inline-comments": "off",
-    "no-cycle": "error",
+    "eslint/no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@components/*", "@actions/*"],
+            "message": "Use the public barrel instead of deep paths: @components or @actions."
+          },
+          {
+            "group": [
+              "@lib/!(client|server|shared)",
+              "@lib/!(client|server|shared)/**"
+            ],
+            "message": "Use a public @lib alias: @lib/client, @lib/server, or @lib/shared."
+          }
+        ]
+      }
+    ],
+    "import/no-cycle": "error",
+    "import/no-unassigned-import": "off",
     "react/react-in-jsx-scope": "off",
     "sort-imports": [
       "error",
       {
+        "allowSeparatedGroups": true,
         "ignoreCase": true,
-        "ignoreDeclarationSort": true,
-        "allowSeparatedGroups": true
+        "ignoreDeclarationSort": true
       }
     ],
     "vitest/require-mock-type-parameters": "off"

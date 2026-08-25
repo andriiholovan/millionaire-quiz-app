@@ -11,7 +11,7 @@ import {
 import { wait } from 'next/dist/lib/wait'
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import z from 'zod'
+import { z } from 'zod'
 
 export async function processAnswer(formData: FormData) {
   const headersList = await headers()

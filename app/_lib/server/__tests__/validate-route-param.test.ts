@@ -1,29 +1,24 @@
 import { describe, expect, it } from 'vitest'
-import z from 'zod'
+import { z } from 'zod'
 import { validateRouteParam } from '../validate-route-param'
 
 describe('validateRouteParam helper', () => {
-  it('Should return valid result', () => {
-    const param = 1
-    const schema = z.number()
-
-    const result = validateRouteParam(param, schema)
-    expect(result).toEqual(1)
+  it('Should return a valid number param unchanged', () => {
+    expect(validateRouteParam(1, z.number())).toBe(1)
   })
 
-  it('Should return valid result with type coercion', () => {
-    const param = '1'
-    const schema = z.coerce.number()
-
-    const result = validateRouteParam(param, schema)
-    expect(result).toEqual(1)
+  it('Should coerce a string param to a number via z.coerce', () => {
+    expect(validateRouteParam('1', z.coerce.number())).toBe(1)
   })
 
-  it('Should throw error', () => {
-    const param = 'abc'
-    const schema = z.number()
+  it('Should throw a 404 error for an invalid param', () => {
+    expect(() => validateRouteParam('abc', z.number())).toThrowError(
+      'NEXT_HTTP_ERROR_FALLBACK;404',
+    )
+  })
 
-    expect(() => validateRouteParam(param, schema)).toThrowError(
+  it('Should throw a 404 error when param is undefined', () => {
+    expect(() => validateRouteParam(undefined, z.number())).toThrowError(
       'NEXT_HTTP_ERROR_FALLBACK;404',
     )
   })

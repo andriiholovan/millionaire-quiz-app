@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import z from 'zod'
+import { z } from 'zod'
 
 export function validateRouteParam<Input, Output>(
   param: Input,

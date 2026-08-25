@@ -3,7 +3,7 @@
 import { Button } from '@components'
 import cn from 'classnames'
 import { useEffect } from 'react'
-import z from 'zod'
+import { z } from 'zod'
 
 import styles from './error.module.css'
 

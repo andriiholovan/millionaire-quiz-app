@@ -1,4 +1,4 @@
-import z from 'zod'
+import { z } from 'zod'
 
 const EnvVariablesSchema = z.object({
   QUIZ_DATA_URL: z.string(),

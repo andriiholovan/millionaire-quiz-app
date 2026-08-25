@@ -1,25 +1,79 @@
-@keyframes correct {
-  from {
-    background: var(--option-background-inactive);
+.option {
+  position: relative;
+  background: transparent;
+  stroke: var(--grey-midlight);
+  fill: var(--white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .option:hover:not(:disabled) {
+    stroke: var(--orange-bright);
+    fill: var(--white);
   }
-  to {
-    background: var(--option-background-correct);
+}
+
+.option:active:not(:disabled),
+.answer_selected {
+  stroke: var(--orange-bright);
+  fill: var(--orange-light);
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transition:
+    stroke 0.15s ease,
+    fill 0.15s ease;
+}
+
+.frame_mobile {
+  display: block;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+}
+
+.frame_desktop {
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: block;
+  }
+}
+
+@keyframes correct {
+  0%,
+  100% {
+    stroke: var(--grey-midlight);
+    fill: var(--white);
+  }
+  50% {
+    stroke: var(--green-bright);
+    fill: var(--green-light);
   }
 }
 
 @keyframes incorrect {
-  from {
-    background: var(--option-background-inactive);
+  0%,
+  100% {
+    stroke: var(--grey-midlight);
+    fill: var(--white);
   }
-  to {
-    background: var(--option-background-incorrect);
+  50% {
+    stroke: var(--red-bright);
+    fill: var(--red-light);
   }
 }
 
-.answer_correct {
+.answer_correct .frame {
   animation: 0.8s correct 0.8s infinite;
 }
 
-.answer_incorrect {
+.answer_incorrect .frame {
   animation: 0.8s incorrect 0.8s infinite;
 }

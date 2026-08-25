@@ -1,6 +1,6 @@
 import { Heading, OptionList, ProgressList, Sidebar } from '@components'
 import { getQuizElement, getQuizList, validateRouteParam } from '@lib/server'
-import z from 'zod'
+import { z } from 'zod'
 import type { Metadata } from 'next'
 
 import styles from './page.module.css'

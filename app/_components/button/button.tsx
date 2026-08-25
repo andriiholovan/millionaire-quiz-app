@@ -1,19 +1,20 @@
 import cn from 'classnames'
-import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
+import { type MouseEvent, type PropsWithChildren } from 'react'
 
 import styles from './button.module.css'
 
-type ButtonProps = {
-  children: React.ReactNode
+type ButtonProps = PropsWithChildren<{
+  'aria-label'?: string
   className?: string
   isWide?: boolean
-  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
+  onClick?: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
   push?: boolean
   to?: string
-}
+}>
 
 export function Button({
+  'aria-label': ariaLabel,
   children,
   className,
   isWide,
@@ -26,12 +27,17 @@ export function Button({
     isWide && styles.button_wide,
     className,
   )
+  const sharedProps = {
+    'aria-label': ariaLabel,
+    className: commonClassNames,
+    onClick,
+  }
   return push ? (
-    <Link prefetch className={commonClassNames} href={to} onClick={onClick}>
+    <Link {...sharedProps} prefetch href={to}>
       {children}
     </Link>
   ) : (
-    <button className={commonClassNames} onClick={onClick} type="button">
+    <button {...sharedProps} type="button">
       {children}
     </button>
   )
@@ -47,8 +53,8 @@ export function ButtonPrimary({
 }: ButtonProps) {
   return (
     <Button
-      isWide={isWide}
       className={cn(styles.button_primary, className)}
+      isWide={isWide}
       onClick={onClick}
       push={push}
       to={to}
@@ -60,25 +66,25 @@ export function ButtonPrimary({
 
 Button.Primary = ButtonPrimary
 
-type ButtonIconProps = Omit<ButtonProps, 'children'> & {
+type ButtonIconProps = ButtonProps & {
   iconAlt: string
   isMobile?: boolean
   isRightAligned?: boolean
-  src: ImageProps['src']
 }
 
 export function ButtonIcon({
+  children,
   className,
   iconAlt,
   isMobile = true,
   isRightAligned = true,
   onClick,
-  src,
   push,
   to,
 }: ButtonIconProps) {
   return (
     <Button
+      aria-label={iconAlt}
       className={cn(
         isMobile && styles.button_mobile,
         isRightAligned && styles.button_align_right,
@@ -88,7 +94,7 @@ export function ButtonIcon({
       push={push}
       to={to}
     >
-      <Image priority src={src} alt={iconAlt} height={24} width={24} />
+      <span className={styles.icon}>{children}</span>
     </Button>
   )
 }

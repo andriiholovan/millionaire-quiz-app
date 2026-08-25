@@ -18,24 +18,23 @@ vi.mock('../get-quiz-data', async () => {
 })
 
 describe('checkQuizAnswer helper', () => {
-  it('Should return correct answer', async () => {
-    const step = 1
-    const answer = '1'
-
-    const result = await checkQuizAnswer(step, answer)
-    expect(result).toEqual(true)
+  it('Should return true for the correct answer id', async () => {
+    const result = await checkQuizAnswer(1, '1')
+    expect(result).toBe(true)
   })
 
-  it('Should return incorrect answer', async () => {
-    let step = 1
-    let answer = '0'
+  it('Should return false for an incorrect answer id', async () => {
+    const result = await checkQuizAnswer(1, '0')
+    expect(result).toBe(false)
+  })
 
-    const result1 = await checkQuizAnswer(step, answer)
-    expect(result1).toEqual(false)
+  it('Should return false for a non-existent step', async () => {
+    const result = await checkQuizAnswer(123456789, 'random string')
+    expect(result).toBe(false)
+  })
 
-    step = 123456789
-    answer = 'random string'
-    const result2 = await checkQuizAnswer(step, answer)
-    expect(result2).toEqual(false)
+  it('Should return false when the answer id does not exist in the list', async () => {
+    const result = await checkQuizAnswer(1, 'nonexistent')
+    expect(result).toBe(false)
   })
 })

@@ -1,6 +1,6 @@
 import { Button, Confetti, HandIcon, Heading } from '@components'
 import { getQuizList, validateRouteParam } from '@lib/server'
-import z from 'zod'
+import { z } from 'zod'
 import type { Metadata } from 'next'
 
 import styles from './page.module.css'

@@ -6,6 +6,9 @@
 }
 
 .answer {
+  position: relative;
+  display: flex;
+  align-items: center;
   font-size: 14px;
   text-align: left;
   height: 56px;
@@ -14,7 +17,7 @@
   border: none;
   cursor: pointer;
   appearance: none;
-  background: var(--option-background-inactive);
+  background: transparent;
 
   @media (min-width: 768px) {
     font-size: 16px;
@@ -27,17 +30,9 @@
   }
 }
 
-.answer:hover {
-  @media (hover: hover) and (pointer: fine) {
-    background: var(--option-background-hover);
-  }
-}
-
-.answer:active {
-  background: var(--option-background-selected);
-}
-
 .answer_label {
+  position: relative;
+  z-index: 1;
   color: var(--orange-bright);
   font-size: 14px;
   font-weight: 600;
@@ -54,6 +49,8 @@
 }
 
 .answer_title {
+  position: relative;
+  z-index: 1;
   color: var(--grey-dark);
   font-weight: 400;
   margin-left: 8px;

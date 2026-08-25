@@ -5,6 +5,7 @@
 }
 
 .progress {
+  position: relative;
   font-size: 14px;
   height: 32px;
   width: 320px;
@@ -13,6 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  stroke: var(--grey-midlight);
+  fill: var(--white);
 
   @media (min-width: 1440px) {
     font-size: 20px;
@@ -21,17 +24,48 @@
   }
 }
 
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transition:
+    stroke 0.15s ease,
+    fill 0.15s ease;
+}
+
+.frame_mobile {
+  display: block;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+}
+
+.frame_desktop {
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: block;
+  }
+}
+
+.reward {
+  position: relative;
+  z-index: 1;
+}
+
 .progress_next {
   color: var(--grey-dark);
-  background: var(--progress-inactive);
 }
 
 .progress_current {
   color: var(--orange-bright);
-  background: var(--progress-active);
+  stroke: var(--orange-bright);
 }
 
 .progress_previous {
   color: var(--grey-midlight);
-  background: var(--progress-inactive);
 }

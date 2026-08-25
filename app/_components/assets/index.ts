@@ -1,1 +1,5 @@
+export * from './burger.icon'
+export * from './cross.icon'
 export * from './hand-icon.icon'
+export * from './option-frame.icon'
+export * from './progress-frame.icon'

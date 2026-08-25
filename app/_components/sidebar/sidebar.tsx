@@ -1,18 +1,13 @@
 'use client'
 
 import cn from 'classnames'
-import { ReactNode, useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
+import { BurgerIcon, CrossIcon } from '../assets'
 import { Button } from '../button'
-import BurgerIcon from '@/public/burger.svg'
-import CrossIcon from '@/public/cross.svg'
 
 import styles from './sidebar.module.css'
 
-type SidebarProps = {
-  children: ReactNode
-}
-
-export function Sidebar({ children }: SidebarProps) {
+export function Sidebar({ children }: PropsWithChildren) {
   const [isOpen, setOpen] = useState(false)
 
   const toggleSidebar = () => {
@@ -22,11 +17,9 @@ export function Sidebar({ children }: SidebarProps) {
   return (
     <>
       <nav className={styles.nav}>
-        <Button.Icon
-          iconAlt="Menu button"
-          onClick={toggleSidebar}
-          src={BurgerIcon}
-        />
+        <Button.Icon iconAlt="Menu button" onClick={toggleSidebar}>
+          <BurgerIcon />
+        </Button.Icon>
       </nav>
       <aside
         className={cn(
@@ -35,11 +28,9 @@ export function Sidebar({ children }: SidebarProps) {
           !isOpen && styles.container_is_closed,
         )}
       >
-        <Button.Icon
-          iconAlt="Close button"
-          onClick={toggleSidebar}
-          src={CrossIcon}
-        />
+        <Button.Icon iconAlt="Close button" onClick={toggleSidebar}>
+          <CrossIcon />
+        </Button.Icon>
         {children}
       </aside>
     </>

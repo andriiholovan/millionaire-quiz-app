@@ -1,4 +1,4 @@
-import z from 'zod'
+import { z } from 'zod'
 
 export const QuizListSchema = z
   .array(
@@ -16,7 +16,7 @@ export const QuizListSchema = z
     }),
   )
   // mutate the data to make sure the list is sorted by the list.step property
-  .transform((schema) => schema.sort((a, b) => a.step - b.step))
+  .transform((schema) => schema.toSorted((a, b) => a.step - b.step))
   // check that the list is a sequence by list.step property
   // btw, checking on the last element to simplify the process
   .refine((schema) => schema.at(-1)?.step === schema.length, {

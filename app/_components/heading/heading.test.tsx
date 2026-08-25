@@ -1,28 +1,21 @@
-import { cleanup, render } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import { Heading } from './heading'
 
 describe('HEADING COMPONENT', () => {
   afterEach(cleanup)
 
-  it('Should match snapshot of component with h1 tag', () => {
-    const { asFragment: asFragmentWithDefaultProps } = render(
-      <Heading>Who wants to be a millionaire?</Heading>,
-    )
-    expect(asFragmentWithDefaultProps()).toMatchSnapshot()
-
-    const { asFragment } = render(
-      <Heading as="h1">Who wants to be a millionaire?</Heading>,
-    )
-    expect(asFragment()).toEqual(asFragmentWithDefaultProps())
+  it('Should render as h1 by default', () => {
+    render(<Heading>Who wants to be a millionaire?</Heading>)
+    expect(screen.getByRole('heading', { level: 1 })).toBeDefined()
   })
 
-  it('Should match snapshot of component with h2 tag', () => {
-    const { asFragment } = render(
-      <Heading as="h2" className="heading className here">
-        Who wants to be a millionaire?
-      </Heading>,
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
+  it.each(['h2', 'h3', 'h4', 'h5', 'h6'] as const)(
+    'Should render as %s tag',
+    (tag) => {
+      const level = Number(tag.slice(1))
+      render(<Heading as={tag}>Question</Heading>)
+      expect(screen.getByRole('heading', { level })).toBeDefined()
+    },
+  )
 })

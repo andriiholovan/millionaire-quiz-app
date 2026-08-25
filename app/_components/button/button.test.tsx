@@ -8,50 +8,49 @@ describe('BUTTON COMPONENT', () => {
     vi.restoreAllMocks()
   })
 
-  it('Should match snapshot of <button> element with default props only', () => {
-    const { asFragment } = render(<Button>Start</Button>)
-    expect(asFragment()).toMatchSnapshot()
+  describe('Button', () => {
+    it('Should render as a <button> element by default', () => {
+      const { asFragment } = render(<Button>Start</Button>)
+      expect(screen.getByRole('button')).toBeDefined()
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('Should render as an <a> element when push prop is set', () => {
+      render(
+        <Button push to="/">
+          Start
+        </Button>,
+      )
+      expect(screen.getByRole('link', { name: 'Start' })).toBeDefined()
+    })
+
+    it('Should call onClick handler when clicked', () => {
+      const mockFn = vi.fn()
+      render(<Button onClick={mockFn}>Click me</Button>)
+      fireEvent.click(screen.getByRole('button'))
+      expect(mockFn).toHaveBeenCalledOnce()
+    })
   })
 
-  it('Should match snapshot of <a> element', () => {
-    const { asFragment } = render(
-      <Button push to="/">
-        Start
-      </Button>,
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
+  describe('Button.Icon', () => {
+    it('Should render with aria-label on the button wrapper', () => {
+      render(
+        <Button.Icon iconAlt="Menu button">
+          <svg aria-hidden="true" />
+        </Button.Icon>,
+      )
+      expect(screen.getByRole('button', { name: 'Menu button' })).toBeDefined()
+    })
 
-  it('Should match snapshot of Button.Primary component', () => {
-    const { asFragment } = render(
-      <Button.Primary push to="/">
-        Start
-      </Button.Primary>,
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  it('Should match snapshot of Button.Icon component', () => {
-    const { asFragment } = render(
-      <Button.Icon
-        iconAlt="Alt text"
-        onClick={vi.fn()}
-        src="/path/to/any/icon"
-      />,
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  it('Should execute onClick handler in Button.Icon', () => {
-    const mockFn = vi.fn()
-    render(
-      <Button.Icon
-        iconAlt="Menu button"
-        onClick={mockFn}
-        src="/path/to/any/icon"
-      />,
-    )
-    fireEvent.click(screen.getByRole('button'))
-    expect(mockFn).toHaveBeenCalledOnce()
+    it('Should call onClick handler when clicked', () => {
+      const mockFn = vi.fn()
+      render(
+        <Button.Icon iconAlt="Close button" onClick={mockFn}>
+          <svg aria-hidden="true" />
+        </Button.Icon>,
+      )
+      fireEvent.click(screen.getByRole('button'))
+      expect(mockFn).toHaveBeenCalledOnce()
+    })
   })
 })
