@@ -38,9 +38,5 @@
     "oxlint": "^1.79.0",
     "typescript": "^7.0.2",
     "vitest": "^4.1.11"
-  },
-  "overrides": {
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.4"
   }
 }
