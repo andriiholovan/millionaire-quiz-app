@@ -1,0 +1,21 @@
+dictionaries = ["en_us"]
+words = [
+  "autorun",
+  "classnames",
+  "midlight",
+  "listitem",
+  "oxlint",
+  "vercel",
+  "vitest",
+  "zod",
+]
+
+# Ignore build artifacts and dependencies
+ignore_paths = [
+  "node_modules/**",
+  ".next/**",
+  "out/**",
+  "build/**",
+  "package-lock.json",
+  "*.min.js",
+]
