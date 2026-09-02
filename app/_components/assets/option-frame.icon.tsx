@@ -21,7 +21,7 @@ export function OptionFrame({ classNames }: OptionFrameProps) {
       </svg>
       <svg
         aria-hidden="true"
-        className={cn(classNames?.base, classNames?.mobile)}
+        className={cn(classNames?.base, classNames?.desktop)}
         viewBox="0 0 405 72"
         xmlns="http://www.w3.org/2000/svg"
       >
